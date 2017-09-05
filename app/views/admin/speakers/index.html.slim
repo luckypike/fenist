@@ -1,0 +1,13 @@
+.page.page_admin.page_admin_speakers
+
+  = render '/admin/shared'
+
+  .page_admin_places_add
+    = link_to 'Добавить нового спикера', [:new, :admin, :speaker]
+
+  .page_admin_places_list
+    .speakers
+      - @speakers.each do |speaker|
+        .speakers_item
+          .title
+            = link_to speaker.title, [:edit, :admin, speaker]

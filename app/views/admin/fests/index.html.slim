@@ -1,0 +1,36 @@
+.page.page_admin.page_admin_fests
+  = render '/admin/shared'
+
+  .page_admin_fests_add
+    = link_to 'Добавить новый фест', [:new, :admin, :fest]
+
+  .page_admin_fests_list
+    .fests
+      - @fests.each do |fest|
+        .fests_item
+          .fests_title
+            .h2
+              => fest.title
+            ' //
+            = link_to 'редактировать', [:edit, :admin, fest]
+
+          .sections
+            .sections_add
+              = link_to 'Добавить секцию на фест', [:new, :admin, :section, fest_id: fest.id]
+
+            - fest.sections.each do |section|
+              .sections_item
+                .sections_title
+                  .h3
+                    => section.title
+                  ' //
+                  = link_to 'редактировать', [:edit, :admin, section]
+
+                .events
+                  .events_add
+                    = link_to 'Добавить событие в секцию', [:new, :admin, :event, section_id: section.id]
+
+                  - section.events.each do |event|
+                    .events_item
+                      = link_to event.title, [:edit, :admin, event]
+

@@ -1,0 +1,22 @@
+.page.page_fest class="page_fest_#{@fest.code}"
+  .page_fest_description
+    .desc
+      = @fest.desc
+    .about
+      = link_to 'О фестивале />', about_path, class: :btn
+
+  / - @fest.sections.each do |section|
+    .page_fest_content class="page_fest_content_#{section.id}"
+      .image
+      .title
+        = section.title
+
+      .date
+        | 25 — 29 сентября
+
+
+      .desc
+        = section.description
+
+      .more
+        = link_to 'Подробное расписание />', '#', class: :btn

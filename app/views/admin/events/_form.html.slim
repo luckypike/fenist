@@ -1,0 +1,17 @@
+.form
+  = simple_form_for([:admin, @event]) do |f|
+    = f.error_notification
+
+    .form_inputs
+      = f.input :title
+      = f.input :started_at, html5: true
+      = f.input :ended_at, html5: true
+      = f.input :desc
+
+      = f.association :section
+      = f.association :place
+
+      = f.association :speakers
+
+    .form_actions
+      = f.button :submit

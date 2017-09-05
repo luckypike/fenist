@@ -1,0 +1,159 @@
+.page_fest {
+  &_description {
+    margin-bottom: $yr * 8;
+
+    .desc {
+      margin-bottom: $yr * 2;
+    }
+  }
+
+  &_content {
+    margin-bottom: $yr * 8;
+
+    .image {
+      margin-bottom: $yr * 2;
+
+      .img_ar {
+        @include aspect-ratio(5, 4);
+
+        background: {
+          color: #f1f1f1;
+          size: cover;
+          repeat: no-repeat;
+          position: center;
+        };
+
+
+        width: 100%;
+
+        @include mq($s) {
+          @include aspect-ratio-modify(16, 9);
+        }
+
+        @include mq($m) {
+          @include aspect-ratio-modify(5, 4);
+        }
+      }
+    }
+
+    .desc {
+      font-size: $yr * 1.75;
+      line-height: $yr * 2.5;
+      margin-top: $yr * 2;
+    }
+
+    .date {
+      margin-top: $yr * 2;
+    }
+
+    .event {
+      margin-top: $yr * 2;
+    }
+
+    .more {
+      margin-top: $yr * 2;
+    }
+
+    @include mq($m) {
+      display: flex;
+      margin-bottom: $yr * 12;
+
+      .image {
+        margin-bottom: 0;
+        width: 5 / 12 * 100%;
+        margin-right: 1 / 12 * 100%;
+        // padding-right: $xr * 6;
+        flex-shrink: 0;
+      }
+
+      .text {
+        align-self: center;
+        // width: 50%;
+        flex-shrink: 0;
+        width: 5 / 12 * 100%;
+        margin-right: 1 / 12 * 100%;
+      }
+
+      .desc {
+        margin-top: $yr * 4;
+      }
+
+      &_2, &_4 {
+        .text {
+          order: -1;
+          width: 6 / 12 * 100%;
+          margin-right: 0;
+        }
+
+        .image {
+          width: 5 / 12 * 100%;
+          margin-left: 1 / 12 * 100%;
+          margin-right: 0;
+          // padding-left: $xr * 6;
+          padding-right: 0;
+        }
+      }
+    }
+
+    @include mq($l) {
+      .text {
+        // width: 50%;
+        flex-shrink: 0;
+        width: 4 / 12 * 100%;
+        margin-right: 2 / 12 * 100%;
+      }
+
+      &_2, &_4 {
+        .text {
+          // order: -1;
+          width: 4 / 12 * 100%;
+          margin-right: 0;
+          margin-left: 2 / 12 * 100%;
+        }
+
+        .image {
+
+        }
+      }
+    }
+
+
+    &_1 {
+      .img_ar {
+        background-image: image_url('temp/sec1.jpg');
+      }
+    }
+
+    &_2 {
+      .img_ar {
+        background-image: image_url('temp/sec2.jpg');
+      }
+    }
+
+    &_3 {
+      .img_ar {
+        background-image: image_url('temp/sec3.jpg');
+      }
+    }
+
+    &_4 {
+      .img_ar {
+        background-image: image_url('temp/sec4.jpg');
+      }
+    }
+  }
+}
+
+.body_fest_general_cat {
+  .header {
+    @include max_width;
+  }
+
+  .page_about {
+    @include max_width;
+  }
+}
+
+.page_fest_general_cat {
+  @include max_width;
+}

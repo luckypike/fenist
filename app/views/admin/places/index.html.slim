@@ -1,0 +1,13 @@
+.page.page_admin.page_admin_places
+
+  = render '/admin/shared'
+
+  .page_admin_places_add
+    = link_to 'Добавить новую площадку', [:new, :admin, :place]
+
+  .page_admin_places_list
+    .places
+      - @places.each do |place|
+        .places_item
+          .title
+            = link_to place.title, [:edit, :admin, place]

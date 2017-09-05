@@ -1,0 +1,71 @@
+.page_admin {
+
+  &_tabs {
+    margin-bottom: $yr * 4;
+
+    .tabs {
+      display: flex;
+
+      &_item {
+        margin-right: $xr;
+      }
+    }
+  }
+
+  &_index {
+
+  }
+
+  &_fests {
+    &_add {
+      margin-bottom: $yr * 4;
+    }
+
+    &_list {
+      .fests {
+        &_item {
+          margin-bottom: $yr * 4;
+
+          .sections {
+            &_add {
+              margin-bottom: $yr * 2;
+            }
+
+            &_item {
+              margin-bottom: $yr * 2;
+
+              .events {
+                &_add {
+                  margin-left: $xr * 2;
+                }
+
+                &_item {
+                  padding-left: $xr * 2;
+
+                  &:before {
+                    content: '—';
+                    display: inline-block;
+                    margin-left: -$xr;
+                    width: $xr;
+                  }
+                }
+              }
+            }
+
+            &_title {
+              .h3 {
+                display: inline;
+              }
+            }
+          }
+        }
+
+        &_title {
+          .h2 {
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+}

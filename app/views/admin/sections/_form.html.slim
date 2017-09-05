@@ -1,0 +1,15 @@
+.form
+  = simple_form_for([:admin, @section]) do |f|
+    = f.error_notification
+
+    .form_inputs
+      = f.input :title
+      = f.input :slug
+      / = f.input :photo
+      = f.input :desc
+
+      = f.association :fest
+      = f.association :place
+
+    .form_actions
+      = f.button :submit

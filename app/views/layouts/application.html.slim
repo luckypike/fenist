@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    = display_meta_tags site: Rails.application.secrets[:sitename], reverse: true, separator: '—'
+
+    = tag('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' })
+
+    = csrf_meta_tags
+    = favicon_link_tag
+
+    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Roboto+Mono:400,500&amp;subset=cyrillic'
+    = javascript_include_tag 'application'
+
+  body class="body_fest_#{@current_fest.code}"
+    header.header
+      = link_to static_fest_path(fest_slug: @current_fest.smart_slug), class: :header_logo do
+        .header_logo_icon
+          = inline_svg 'logo.svg'
+
+        .header_logo_name
+          | Фенист #{@current_fest.started_at.year}
+          br
+          = @current_fest.title
+
+      .header_menu
+        .header_menu_burger
+          svg viewBox="0 0 36 36"
+            line x1="9" y1="12" x2="27" y2="12"
+            line x1="9" y1="17" x2="27" y2="17"
+            line x1="9" y1="22" x2="27" y2="22"
+
+    = yield

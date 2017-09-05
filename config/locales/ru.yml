@@ -1,0 +1,5 @@
+ru:
+  date:
+    formats:
+      date_and_month: "%-d %B"
+      date_without_month: "%-d"
