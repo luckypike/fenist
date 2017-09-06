@@ -21,6 +21,10 @@ class Admin::EventsController < AdminController
   end
 
   def update
+    @event.themes = event_params[:themes]
+    @event.themes = [2, 3]
+    @event.themes_will_change!
+    # p event_params[:themes]
     if @event.update(event_params)
       redirect_to [:admin, :fests], notice: 'Fest was successfully updated.'
     else
@@ -34,6 +38,6 @@ class Admin::EventsController < AdminController
   end
 
   def event_params
-    params.require(:event).permit(:title, :started_at, :ended_at, :desc, :section_id, :place_id, speaker_ids: [])
+    params.require(:event).permit(:title, :started_at, :ended_at, :desc, :section_id, :place_id, speaker_ids: [], themes: [])
   end
 end

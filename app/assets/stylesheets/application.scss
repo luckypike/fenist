@@ -26,6 +26,8 @@ $xl: 1440px;
 }
 
 * {
+  box-sizing: border-box;
+
   &:before, &:after {
     box-sizing: border-box;
   }

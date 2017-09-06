@@ -3,3 +3,13 @@ ru:
     formats:
       date_and_month: "%-d %B"
       date_without_month: "%-d"
+      date_d: "%d.%m"
+
+  time:
+    formats:
+      human: "%H:%M"
+
+
+  sci: Наука
+  art: Искусство
+  tech: Технологии

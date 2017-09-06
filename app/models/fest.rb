@@ -8,7 +8,7 @@ class Fest < ApplicationRecord
     self.slug.underscore
   end
 
-  def smart_slug
-    self.id != Rails.application.secrets[:fest] ? self.slug : ''
-  end
+  # def smart_slug
+  #   self.id != Rails.application.secrets[:fest] ? self.slug : nil
+  # end
 end

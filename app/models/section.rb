@@ -4,6 +4,10 @@ class Section < ApplicationRecord
 
   has_many :events
 
+  def code
+    self.slug.underscore
+  end
+
   def started_at
     @started_at = events.order(started_at: :asc).first.started_at rescue nil
   end

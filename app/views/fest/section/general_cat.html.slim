@@ -1,0 +1,37 @@
+.page.page_section class="page_section_#{@section.fest.code}"
+  .page_section_desc
+    .title.h2
+      = @section.title
+
+    .desc
+      = @section.desc
+
+  .page_section_days
+    .days
+      - @section.started_at.to_date.upto(@section.ended_at.to_date) do |date|
+        .days_item data-date=date
+          .full
+            = l(date, format: :date_and_month)
+          .short
+            = l(date, format: :date_d)
+
+
+  .page_section_schedule
+    .days
+      - @section.events.group_by{ |e| e.started_at.to_date }.each do |date, date_events|
+        .days_item data-date=date
+          .events
+            - date_events.sort_by(&:started_at).each do |event|
+              .events_item
+                .themes
+                  - event.themes.reject(&:blank?).each do |theme|
+                    .themes_item class=theme
+                      = t(theme)
+
+                .time
+                  => l(event.started_at, format: :human)
+                  | —
+                  =< l(event.ended_at, format: :human)
+
+                .title
+                  = event.title

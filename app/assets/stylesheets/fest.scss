@@ -1,3 +1,5 @@
+// TODO: split by files
+
 .page_fest {
   &_description {
     margin-bottom: $yr * 8;
@@ -144,6 +146,104 @@
   }
 }
 
+.page_section {
+  &_desc {
+    margin-bottom: $yr * 4;
+
+    .title {
+      margin-bottom: $yr * 2;
+    }
+  }
+
+  &_days {
+    margin-bottom: $yr * 4;
+
+    .days {
+      display: flex;
+
+      &_item {
+        border: 1px solid $pr_color;
+        border-right: 0;
+        min-width: 55px;
+
+        padding: $yr $xr / 2;
+
+        font-size: $yr * 1.5;
+        line-height: $yr * 2.5;
+
+        .full {
+          display: none;
+        }
+
+        &:last-child {
+          border-right: 1px solid $pr_color;
+
+        }
+      }
+    }
+
+    @include mq($s) {
+      .days {
+        &_item {
+          padding: $yr $xr;
+          font-size: $yr * 1.75;
+          line-height: $yr * 2.5;
+
+          .full {
+            display: block;
+          }
+
+          .short {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &_schedule {
+
+    .events {
+      &_item {
+        border-bottom: 1px solid rgba($pr_color, 0.3);
+        padding-bottom: $yr * 2;
+        margin-bottom: $yr * 2;
+
+        .themes {
+          font-size: $yr * 1.5;
+          line-height: $yr * 2;
+          text-transform: uppercase;
+          display: flex;
+          margin-bottom: $yr;
+
+          &_item {
+            background: rgba($pr_color, 0.1);
+            padding: $yr / 2 $xr / 2;
+            margin-right: $xr / 2;
+
+            &.sci {
+              background: rgba(#7ad4e6, 0.5);
+            }
+
+            &.art {
+              background: rgba(#88CC88, 0.5);
+            }
+
+            &.tech {
+              background: rgba(#f1b19a, 0.5);
+            }
+          }
+        }
+
+        .time {
+          margin-bottom: $yr;
+        }
+      }
+    }
+  }
+}
+
+
 .body_fest_general_cat {
   .header {
     @include max_width;
@@ -154,6 +254,7 @@
   }
 }
 
+.page_section_general_cat,
 .page_fest_general_cat {
   @include max_width;
 }

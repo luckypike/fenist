@@ -14,7 +14,7 @@ html
 
   body class="body_fest_#{@current_fest.code}"
     header.header
-      = link_to static_fest_path(fest_slug: @current_fest.smart_slug), class: :header_logo do
+      = link_to [:static_fest, fest_slug: @current_fest.slug], class: :header_logo do
         .header_logo_icon
           = inline_svg 'logo.svg'
 

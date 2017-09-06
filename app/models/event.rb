@@ -1,4 +1,9 @@
 class Event < ApplicationRecord
+  THEMES = %w(sci art tech)
+
+  serialize :themes, Array
+
+
   belongs_to :section
   belongs_to :place, optional: true
 
