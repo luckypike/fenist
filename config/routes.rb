@@ -1,46 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'events/new'
-  end
-
-  namespace :admin do
-    get 'events/edit'
-  end
-
-  namespace :admin do
-    get 'events/index'
-  end
-
-  namespace :admin do
-    get 'speakers/new'
-  end
-
-  namespace :admin do
-    get 'speakers/edit'
-  end
-
-  namespace :admin do
-    get 'speakers/index'
-  end
-
-  namespace :admin do
-    get 'places/new'
-  end
-
-  namespace :admin do
-    get 'places/create'
-  end
-
-  namespace :admin do
-    get 'places/edit'
-  end
-
-  namespace :admin do
-    get 'places/update'
-  end
-
-  get 'pages/about'
-
   root 'fest#show'
 
   scope(path: ':fest_slug', constraints: lambda { |request| Fest.find_by_slug(request.params[:fest_slug]).present? }) do
