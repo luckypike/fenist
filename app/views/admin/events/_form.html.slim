@@ -1,5 +1,4 @@
 .form
-  = @event.themes
   = simple_form_for([:admin, @event]) do |f|
     = f.error_notification
 
@@ -10,6 +9,7 @@
       = f.input :desc
       = f.input :themes, as: :check_boxes, collection: Event::THEMES
 
+      = f.association :partner
       = f.association :section
       = f.association :place
 

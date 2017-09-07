@@ -1,0 +1,11 @@
+.form
+  = simple_form_for([:admin, @partner]) do |f|
+    = f.error_notification
+
+    .form_inputs
+      = f.input :title
+      = f.input :logo
+      = f.input :url
+
+    .form_actions
+      = f.button :submit

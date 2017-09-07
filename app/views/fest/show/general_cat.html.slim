@@ -3,7 +3,7 @@
     .desc
       = @fest.desc
     .about
-      = link_to 'О фестивале />', about_path, class: :btn
+      = link_to 'О фестивале />', [:about, fest_slug: @fest.slug], class: :btn
 
   - @fest.sections.each do |section|
     .page_fest_content class="page_fest_content_#{section.id}"
@@ -25,7 +25,7 @@
 
         - if section.events.size > 1
           .more
-            = link_to 'Подробное расписание />', [:static_fest_section, fest_slug: section.fest.slug, section_slug: section.slug], class: :btn_sub
+            = link_to 'Подробное расписание />', [:section, fest_slug: section.fest.slug, section_slug: section.slug], class: :btn_sub
 
         - elsif section.events.size == 1
           - event = section.events.first

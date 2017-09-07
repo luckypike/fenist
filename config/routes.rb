@@ -2,18 +2,15 @@ Rails.application.routes.draw do
   root 'fest#show'
 
   scope(path: ':fest_slug', constraints: lambda { |request| Fest.find_by_slug(request.params[:fest_slug]).present? }) do
-    get '', to: 'fest#show', as: :static_fest
-    get ':section_slug', to: 'fest#section', as: :static_fest_section
+    get '', to: 'fest#show', as: :fest
+    get 'about', to: 'fest#about'
+    get ':section_slug', to: 'fest#section', as: :section
   end
 
   # get 'about', to: 'static#about'
 
   scope format: false do
     devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
-
-    scope 'about' do
-      get '', to: 'pages#about', as: :about
-    end
   end
 
   namespace :admin do
@@ -23,5 +20,6 @@ Rails.application.routes.draw do
     resources :places
     resources :speakers
     resources :events
+    resources :partners
   end
 end

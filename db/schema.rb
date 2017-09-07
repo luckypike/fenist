@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170906211409) do
+ActiveRecord::Schema.define(version: 20170907144247) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20170906211409) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "themes"
+    t.integer "partner_id"
+    t.index ["partner_id"], name: "index_events_on_partner_id"
     t.index ["place_id"], name: "index_events_on_place_id"
     t.index ["section_id"], name: "index_events_on_section_id"
   end
@@ -39,6 +41,21 @@ ActiveRecord::Schema.define(version: 20170906211409) do
     t.date "started_at"
     t.date "ended_at"
     t.text "desc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fests_partners", id: false, force: :cascade do |t|
+    t.integer "fest_id"
+    t.integer "partner_id"
+    t.index ["fest_id"], name: "index_fests_partners_on_fest_id"
+    t.index ["partner_id"], name: "index_fests_partners_on_partner_id"
+  end
+
+  create_table "partners", force: :cascade do |t|
+    t.string "title"
+    t.string "logo"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

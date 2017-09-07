@@ -1,4 +1,7 @@
 .page.page_section class="page_section_#{@section.fest.code}"
+  .page_section_back
+    = link_to '<\ Все секции', [:fest, fest_slug: @section.fest.slug], class: :btn_sub
+
   .page_section_desc
     .title.h2
       = @section.title
@@ -9,7 +12,7 @@
   .page_section_days
     .days
       - @section.started_at.to_date.upto(@section.ended_at.to_date) do |date|
-        .days_item data-date=date
+        .days_item data-date=date class=(date == Date.today ? :active : nil)
           .full
             = l(date, format: :date_and_month)
           .short

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
   def set_fests
     @active_fest = Fest.find(Rails.application.secrets[:fest])
-    redirect_to [:static_fest, fest_slug: @active_fest.slug] if !params[:fest_slug] && controller_name == 'fest'
+    redirect_to [:fest, fest_slug: @active_fest.slug] if !params[:fest_slug] && controller_name == 'fest'
     @current_fest = Fest.find_by_slug(params[:fest_slug])
     @current_fest ||= @active_fest
 

@@ -147,6 +147,10 @@
 }
 
 .page_section {
+  &_back {
+    margin-bottom: $yr * 4;
+  }
+
   &_desc {
     margin-bottom: $yr * 4;
 
@@ -165,6 +169,8 @@
         border: 1px solid $pr_color;
         border-right: 0;
         min-width: 55px;
+        cursor: pointer;
+        user-select: none;
 
         padding: $yr $xr / 2;
 
@@ -177,7 +183,11 @@
 
         &:last-child {
           border-right: 1px solid $pr_color;
+        }
 
+        &.active {
+          background: $pr_color;
+          color: $op_color;
         }
       }
     }
@@ -202,6 +212,12 @@
   }
 
   &_schedule {
+    .days {
+      &_item {
+        display: none;
+      }
+    }
+
 
     .events {
       &_item {

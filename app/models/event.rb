@@ -4,6 +4,7 @@ class Event < ApplicationRecord
   serialize :themes, Array
 
 
+  belongs_to :partner, optional: true
   belongs_to :section
   belongs_to :place, optional: true
 

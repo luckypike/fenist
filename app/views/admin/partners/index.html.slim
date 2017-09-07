@@ -1,0 +1,13 @@
+.page.page_admin.page_admin_partners
+
+  = render '/admin/shared'
+
+  .page_admin_places_add
+    = link_to 'Добавить нового партнера', [:new, :admin, :partner]
+
+  .page_admin_partners_list
+    .partners
+      - @partners.each do |partner|
+        .partners_item
+          .title
+            = link_to partner.title, [:edit, :admin, partner]
