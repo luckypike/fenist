@@ -8,6 +8,10 @@ class Fest < ApplicationRecord
     self.slug.underscore
   end
 
+  def title_full
+    Rails.application.secrets[:sitename] + ' ' + self.started_at.year.to_s + ': ' + self.title
+  end
+
   # def smart_slug
   #   self.id != Rails.application.secrets[:fest] ? self.slug : nil
   # end

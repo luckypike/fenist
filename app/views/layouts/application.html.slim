@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    = display_meta_tags site: Rails.application.secrets[:sitename], reverse: true, separator: '—'
+    = display_meta_tags site: @current_fest.title_full, reverse: true, separator: '—'
 
     = tag('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' })
 
