@@ -33,6 +33,15 @@ $(function(){
     _days_items.first().trigger('click');
   }
 
+  $('.events_item').on('click', function() {
+    if($(this).is('.active')) {
+
+    } else {
+      $('.events_item.active').toggleClass('active').find('.desc').slideToggle(300);
+    }
+    $(this).toggleClass('active').find('.desc').slideToggle(300);
+  });
+
 
 
 

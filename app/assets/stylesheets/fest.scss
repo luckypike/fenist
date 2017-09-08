@@ -39,8 +39,8 @@
     }
 
     .desc {
-      font-size: $yr * 1.75;
-      line-height: $yr * 2.5;
+      @include fs_small;
+
       margin-top: $yr * 2;
     }
 
@@ -157,6 +157,10 @@
     .title {
       margin-bottom: $yr * 2;
     }
+
+    .desc {
+      @include fs_small;
+    }
   }
 
   &_days {
@@ -221,9 +225,23 @@
 
     .events {
       &_item {
-        border-bottom: 1px solid rgba($pr_color, 0.3);
-        padding-bottom: $yr * 2;
+        // border-bottom: 1px solid rgba($pr_color, 0.3);
+        // padding-bottom: $yr * 2;
         margin-bottom: $yr * 2;
+        position: relative;
+        padding: $yr * 2 $xr;
+
+        &:after {
+          content: '';
+          background: $op_color;
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          z-index: -1;
+          transition-duration: 0.3s;
+        }
 
         .themes {
           font-size: $yr * 1.5;
@@ -254,6 +272,33 @@
         .time {
           margin-bottom: $yr;
         }
+
+        .title {
+          margin-bottom: $yr;
+        }
+
+        .desc {
+          @include fs_small;
+
+          margin-bottom: $yr;
+          display: none;
+        }
+
+        .speaerks {
+          @include fs_small;
+        }
+
+        &.active {
+          color: $op_color;
+
+          &:after {
+            background: $pr_color;
+            left: -$xr;
+            right: -$xr;
+            top: -$yr;
+            bottom: -$yr;
+          }
+        }
       }
     }
   }
@@ -261,6 +306,8 @@
 
 
 .body_fest_general_cat {
+  background: #f1f1f1;
+
   .header {
     @include max_width;
   }
