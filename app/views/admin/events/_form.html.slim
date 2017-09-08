@@ -7,6 +7,7 @@
       = f.input :started_at, html5: true
       = f.input :ended_at, html5: true
       = f.input :desc
+      = f.input :book
       = f.input :themes, as: :check_boxes, collection: Event::THEMES
 
       = f.association :partner

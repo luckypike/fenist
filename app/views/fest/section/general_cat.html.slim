@@ -36,12 +36,28 @@
                   | —
                   =< l(event.ended_at, format: :human)
 
+                  - if event.book.present?
+                    .time_book
+                      | По записи
+
+
                 .title
                   = event.title
 
                 .desc
                   | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
 
+                  - if event.book.present?
+                    .desc_book
+                      = link_to 'Записаться на лекцию', '#', class: :btn
+
                 - if event.speakers.any?
                   .speakers
                     = event.speakers.map(&:title).to_sentence
+
+          - if date != @section.ended_at.to_date
+            .next_day
+              .btn_sub data-date=(date + 1.day)
+                | Далее:
+                =>< l(date + 1.day, format: :date_and_month)
+                | />

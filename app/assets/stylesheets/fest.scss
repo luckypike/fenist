@@ -164,7 +164,8 @@
   }
 
   &_days {
-    margin-bottom: $yr * 4;
+    max-width: $s;
+    margin: 0 auto $yr * 4;
 
     .days {
       display: flex;
@@ -216,6 +217,9 @@
   }
 
   &_schedule {
+    max-width: $s;
+    margin: 0 auto;
+
     .days {
       &_item {
         display: none;
@@ -224,9 +228,10 @@
 
 
     .events {
+      margin-bottom: $yr * 4;
+
       &_item {
-        // border-bottom: 1px solid rgba($pr_color, 0.3);
-        // padding-bottom: $yr * 2;
+        // box-shadow: 0 1px 2px rgba(0,0,0,0.07);
         margin-bottom: $yr * 2;
         position: relative;
         padding: $yr * 2 $xr;
@@ -270,7 +275,24 @@
         }
 
         .time {
+          display: flex;
           margin-bottom: $yr;
+          position: relative;
+
+          &_book {
+            border: 1px solid red;
+            color: red;
+            font-size: $yr * 1.5;
+            padding: 0 $xr / 2;
+            margin-left: $xr;
+
+            text-transform: uppercase;
+
+            // position: absolute;
+            // right: 0;
+            // top: 0;
+          }
+
         }
 
         .title {
@@ -282,10 +304,19 @@
 
           margin-bottom: $yr;
           display: none;
+
+          &_book {
+            margin-top: $yr;
+          }
         }
 
-        .speaerks {
+        .speakers {
           @include fs_small;
+
+          &:before {
+            content: '---';
+            display: block;
+          }
         }
 
         &.active {
@@ -300,6 +331,10 @@
           }
         }
       }
+    }
+
+    .next_day {
+      text-align: right;
     }
   }
 }
