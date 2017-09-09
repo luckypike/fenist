@@ -339,6 +339,52 @@
   }
 }
 
+.page_speakers {
+  .speakers_list {
+    &_title {
+      margin-bottom: $yr * 2;
+
+      h1 {
+        @include fs_upper;
+      }
+    }
+
+    &_item {
+      margin-bottom: $yr * 4;
+
+      .title {
+        margin-bottom: $yr;
+      }
+
+      .desc {
+        @include fs_small;
+
+        margin-bottom: $yr;
+      }
+    }
+  }
+}
+
+.page_partners {
+  .partners_list {
+    &_title {
+      margin-bottom: $yr * 2;
+
+      h1 {
+        @include fs_upper;
+      }
+    }
+
+    &_item {
+      margin-bottom: $yr * 4;
+
+      .title {
+        margin-bottom: $yr;
+      }
+    }
+  }
+}
+
 
 .body_fest_general_cat {
   background: #f1f1f1;
@@ -352,6 +398,8 @@
   }
 }
 
+.page_speakers,
+.page_partners,
 .page_section_general_cat,
 .page_fest_general_cat {
   @include max_width;

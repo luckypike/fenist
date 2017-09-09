@@ -1,0 +1,11 @@
+.page.page_common.page_speakers
+  .speakers_list
+    .speakers_list_title
+      h1 Спикеры
+
+    - @speakers.each do |speaker|
+      .speakers_list_item
+        .title
+          = speaker.title
+        .desc
+          = speaker.desc

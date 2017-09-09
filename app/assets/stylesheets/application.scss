@@ -25,6 +25,11 @@ $xl: 1440px;
   margin-right: auto;
 }
 
+@mixin fs_upper {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
 @mixin fs_small {
   font-size: $yr * 1.75;
   line-height: $yr * 2.5;
@@ -43,6 +48,11 @@ body {
   font-size: $yr * 2;
   line-height: $yr * 3;
   text-size-adjust: 100%;
+
+  &.with_nav {
+    max-height: 100%;
+    overflow: hidden;
+  }
 }
 
 
@@ -54,6 +64,9 @@ body {
     display: flex;
     color: #212121;
     text-decoration: none;
+    position: relative;
+    z-index: 6;
+    width: 10rem;
 
     &_icon {
       margin-right: $xr;
@@ -78,6 +91,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 6;
 
     &_burger {
       // font-size: $yr * 5;
@@ -92,8 +106,101 @@ body {
 
 
         line {
+          transition: stroke 0.3s;
           stroke: #212121;
           stroke-width: 2;
+        }
+      }
+    }
+  }
+
+  &_nav {
+    @include fs_small;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: $yr * 4.5;
+
+    &_item {
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  @include mq(0 $s - 1) {
+    &_logo {
+      transition: z-index 0s 0.3s;
+    }
+
+    &_nav {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: $pr_color;
+      z-index: 5;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY($yr * 10);
+      padding: $yr * 10.5 $xr 0;
+      transition: opacity 0.3s, transform 0.3s, visibility 0s 0.3s;
+
+      &_item {
+        a {
+          color: $op_color;
+        }
+      }
+    }
+
+    &.with_nav {
+      .header_logo {
+        // z-index: 6;
+      }
+
+      .header_nav {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition: opacity 0.3s, transform 0.3s;
+      }
+
+      .header_menu_burger {
+        svg {
+          line {
+            stroke: $op_color;
+          }
+        }
+      }
+    }
+  }
+
+  @include mq($s) {
+    &_menu {
+      display: none;
+    }
+
+    &_nav {
+
+      display: flex;
+      position: absolute;
+      top: $yr * 3;
+      right: $xr;
+
+      &_item {
+        margin-right: $xr;
+
+        a {
+          color: $pr_color;
+
+          &.active {
+            opacity: 0.5;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
         }
       }
     }

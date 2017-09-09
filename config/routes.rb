@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   scope(path: ':fest_slug', constraints: lambda { |request| Fest.find_by_slug(request.params[:fest_slug]).present? }) do
     get '', to: 'fest#show', as: :fest
     get 'about', to: 'fest#about'
+    get 'speakers', to: 'fest#speakers'
+    get 'partners', to: 'fest#partners'
     get ':section_slug', to: 'fest#section', as: :section
   end
 

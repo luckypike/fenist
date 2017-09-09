@@ -21,6 +21,7 @@ gem 'inline_svg'
 gem 'devise'
 
 gem 'meta-tags'
+gem 'active_link_to'
 
 gem 'simple_form'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'

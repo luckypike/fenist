@@ -30,10 +30,9 @@
 
   &_about {
     h1 {
+      @include fs_upper;
+
       margin-bottom: $yr * 2;
-      // text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
     }
 
     p {

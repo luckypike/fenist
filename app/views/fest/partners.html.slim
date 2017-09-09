@@ -1,0 +1,9 @@
+.page.page_common.page_partners
+  .partners_list
+    .partners_list_title
+      h1 Партнеры
+
+    - @partners.each do |partner|
+      .partners_list_item
+        .title
+          = partner.title

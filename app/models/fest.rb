@@ -2,6 +2,9 @@ class Fest < ApplicationRecord
 
   has_many :sections
 
+  has_many :events, through: :sections
+  has_many :speakers, through: :events
+
   default_scope { order(started_at: :asc) }
 
   def code

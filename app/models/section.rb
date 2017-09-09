@@ -3,6 +3,7 @@ class Section < ApplicationRecord
   belongs_to :place, optional: true
 
   has_many :events
+  has_many :speakers, through: :events
 
   def code
     self.slug.underscore

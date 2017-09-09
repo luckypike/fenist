@@ -58,6 +58,8 @@ $(function(){
   });
 
 
-
+  $('.header_menu_burger').on('click', function() {
+    $(this).closest('.header').toggleClass('with_nav').parent().toggleClass('with_nav');
+  });
 
 });
