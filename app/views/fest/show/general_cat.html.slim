@@ -25,7 +25,7 @@
 
         - if section.events.size > 1
           .more
-            = link_to 'Подробное расписание />', [:section, fest_slug: section.fest.slug, section_slug: section.slug], class: :btn
+            = link_to 'Расписание />', [:section, fest_slug: section.fest.slug, section_slug: section.slug], class: :btn
 
         - elsif section.events.size == 1
           - event = section.events.first
