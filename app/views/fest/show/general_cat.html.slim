@@ -3,29 +3,29 @@
     .desc
       = @fest.desc
     .about
-      = link_to 'О фестивале />', [:about, fest_slug: @fest.slug], class: :btn_sub
+      = link_to 'О фестивале', [:about, fest_slug: @fest.slug], class: :btn_sub
 
   - @fest.sections.each do |section|
     .page_fest_content class="page_fest_content_#{section.id}"
       .image
+        - if section.events.size > 0
+          .date
+            = l(section.started_at.to_date, format: :date_d)
+            br
+            = l(section.ended_at.to_date, format: :date_d)
+
         .img_ar
+
       .text
         .title.h2
           = section.title
-
-        - if section.events.size > 0
-          .date
-            => l(section.started_at.to_date, format: (section.same_month_dates ? :date_without_month : :date_and_month))
-            | —
-            =< l(section.ended_at.to_date, format: :date_and_month)
-
 
         .desc
           = section.desc
 
         - if section.events.size > 1
           .more
-            = link_to 'Подробное расписание />', [:section, fest_slug: section.fest.slug, section_slug: section.slug], class: :btn_sub
+            = link_to 'Подробное расписание />', [:section, fest_slug: section.fest.slug, section_slug: section.slug], class: :btn
 
         - elsif section.events.size == 1
           - event = section.events.first

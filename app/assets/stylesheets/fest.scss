@@ -1,11 +1,13 @@
 // TODO: split by files
 
 .page_fest {
+  padding-top: 0;
+
   &_description {
-    margin-bottom: $yr * 8;
+    margin-bottom: $yr * 6;
 
     .desc {
-      margin-bottom: $yr * 2;
+      margin-bottom: $yr * 1.5;
     }
   }
 
@@ -13,47 +15,58 @@
     margin-bottom: $yr * 8;
 
     .image {
-      margin-bottom: $yr * 2;
+      position: relative;
 
-      .img_ar {
-        @include aspect-ratio(5, 4);
+      .date {
+        font-size: $yr * 2.5;
+        line-height: $yr * 3;
+        letter-spacing: -0.1em;
 
-        background: {
-          color: #f1f1f1;
-          size: cover;
-          repeat: no-repeat;
-          position: center;
-        };
-
-
-        width: 100%;
-
-        @include mq($s) {
-          @include aspect-ratio-modify(16, 9);
-        }
-
-        @include mq($m) {
-          @include aspect-ratio-modify(5, 4);
-        }
+        background: $pr_color;
+        color: $op_color;
+        display: inline-block;
+        text-align: right;
+        padding: $yr * 4 $xr $yr;
+        width: 124px;
       }
+
+      // .img_ar {
+      //   @include aspect-ratio(5, 4);
+
+      //   background: {
+      //     color: #f1f1f1;
+      //     size: cover;
+      //     repeat: no-repeat;
+      //     position: center;
+      //   };
+
+
+      //   width: 100%;
+
+      //   @include mq($s) {
+      //     @include aspect-ratio-modify(16, 9);
+      //   }
+
+      //   @include mq($m) {
+      //     @include aspect-ratio-modify(5, 4);
+      //   }
+      // }
     }
 
     .desc {
       @include fs_small;
-
-      margin-top: $yr * 2;
     }
 
-    .date {
-      margin-top: $yr * 2;
+    .desc, .title {
+      margin-top: $yr * 1.5;
     }
 
     .event {
-      margin-top: $yr * 2;
+      margin-top: $yr * 1.5;
     }
 
     .more {
-      margin-top: $yr * 2;
+      margin-top: $yr * 3;
     }
 
     @include mq($m) {
@@ -121,15 +134,58 @@
 
 
     &_1 {
-      .img_ar {
-        background-image: image_url('temp/sec1.jpg');
+      .image {
+        background: {
+          image: image_url('pattern.svg');
+          size: 12px;
+          position: 0 0;
+        }
+
+        padding: 12px 0;
+
+        .img_ar {
+          display: none;
+        }
       }
     }
 
     &_2 {
-      .img_ar {
-        background-image: image_url('temp/sec2.jpg');
+      .image {
+        position: relative;
+
+        &:before {
+          position: absolute;
+          content: '';
+          left: 0;
+          top: 0;
+          width: 136px;
+          bottom: 0;
+          z-index: 1;
+          background: {
+            image: image_url('pattern_white.svg');
+            size: 12px;
+            position: 4px 6px;
+          }
+        }
+
+        .img_ar {
+          @include aspect-ratio(5, 4);
+
+          background: {
+            image: image_url('temp/sec2.jpg');
+            position: center;
+            size: cover;
+          }
+        }
+
+        .date {
+          position: absolute;
+          top: 12px;
+          left: 0;
+          z-index: 2;
+        }
       }
+
     }
 
     &_3 {
@@ -387,7 +443,7 @@
 
 
 .body_fest_general_cat {
-  background: #f1f1f1;
+  background: #f5f5f5;
 
   .header {
     @include max_width;

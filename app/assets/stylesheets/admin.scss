@@ -1,4 +1,14 @@
 .page_admin {
+  @include max_width;
+
+
+  &_form {
+
+
+    .form {
+      max-width: $s;
+    }
+  }
 
   &_tabs {
     margin-bottom: $yr * 4;

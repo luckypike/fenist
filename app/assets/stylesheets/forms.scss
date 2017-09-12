@@ -1,0 +1,39 @@
+.form {
+  &_inputs {
+    .input {
+      margin-bottom: $yr * 2;
+
+      &_label {
+        margin-bottom: $yr;
+      }
+
+      &_input {
+        .text,
+        .date,
+        .datetime,
+        .string {
+          border: 2px solid $pr_color;
+          font-size: inherit;
+          font-family: inherit;
+          line-height: inherit;
+
+          width: 100%;
+          padding: $yr $xr;
+          outline: none;
+
+          &:focus {
+            border-color: blue;
+          }
+        }
+
+        .text {
+          resize: vertical;
+        }
+      }
+    }
+  }
+
+  &_actions {
+    margin-top: $yr * 4;
+  }
+}
