@@ -18,3 +18,4 @@
 
     .form_actions
       = f.button :submit
+      =< link_to 'Удалить', [:admin, @event], class: :btn, method: :delete, data: { confirm: 'Удалить?' } unless @event.new_record?

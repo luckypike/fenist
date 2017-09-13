@@ -28,6 +28,15 @@
 
         .text {
           resize: vertical;
+          min-height: $yr * 24;
+        }
+      }
+
+      &.event_title {
+        .input_input {
+          .text {
+            min-height: $yr * 12;
+          }
         }
       }
     }

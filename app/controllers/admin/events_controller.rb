@@ -32,6 +32,11 @@ class Admin::EventsController < AdminController
     end
   end
 
+  def destroy
+    @event.destroy
+    redirect_to [:admin, :fests]
+  end
+
   private
   def set_event
     @event = Event.find(params[:id])
