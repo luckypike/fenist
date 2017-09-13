@@ -25,6 +25,7 @@ gem 'active_link_to'
 
 gem 'simple_form'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'mini_magick'
 
 gem 'capistrano'
 gem 'capistrano-rails'

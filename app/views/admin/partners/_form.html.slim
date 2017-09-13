@@ -4,6 +4,9 @@
 
     .form_inputs
       = f.input :title
+
+      = image_tag @partner.logo.thumb.url, style: 'width: 150px;' if @partner.logo?
+
       = f.input :logo
       = f.input :url
 

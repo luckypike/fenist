@@ -4,6 +4,9 @@
 
     .form_inputs
       = f.input :title
+
+      = image_tag @speaker.photo.thumb.url, style: 'width: 150px;' if @speaker.photo?
+
       = f.input :photo
       = f.input :desc
 
