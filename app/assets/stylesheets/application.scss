@@ -26,15 +26,9 @@ $xl: 1440px;
   margin-right: auto;
 }
 
-@mixin fs_upper {
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
 
-@mixin fs_small {
-  font-size: $yr * 1.75;
-  line-height: $yr * 2.5;
-}
+@import 'forms';
+@import 'fonts';
 
 * {
   box-sizing: border-box;
@@ -233,37 +227,9 @@ body {
   }
 }
 
-@import 'forms';
+
 
 @import 'pages';
 @import 'fest';
 @import 'admin';
-
-@mixin fs_h1 {
-  font-size: 2rem;
-  line-height: 2.5rem;
-}
-
-h1, .h1 {
-  @include fs_h1;
-}
-
-@mixin fs_h2 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-h2, .h2 {
-  @include fs_h2;
-}
-
-
-@mixin fs_h3 {
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-}
-
-h2, .h3 {
-  @include fs_h3;
-}
 
