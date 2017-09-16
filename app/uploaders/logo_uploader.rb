@@ -19,6 +19,11 @@ class LogoUploader < CarrierWave::Uploader::Base
     process :optimize
   end
 
+  version :small do
+    process resize_to_limit: [200, 200]
+    process :optimize
+  end
+
   process resize_to_limit: [3000, 3000]
 
   def extension_whitelist

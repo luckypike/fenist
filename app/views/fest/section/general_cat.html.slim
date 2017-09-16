@@ -21,39 +21,61 @@
 
   .page_section_schedule
     .days
-      - @section.events.group_by{ |e| e.started_at.to_date }.each do |date, date_events|
+      - @section.started_at.to_date.upto(@section.ended_at.to_date) do |date|
+        - date_events = @section.events.select{ |e| e.started_at.to_date == date }
+        / - @section.events.group_by{ |e| e.started_at.to_date }.each do |date, date_events|
         .days_item data-date=date
-          .events
-            - date_events.sort_by(&:started_at).each do |event|
-              .events_item
-                .themes
-                  - event.themes.reject(&:blank?).each do |theme|
-                    .themes_item class=theme
-                      = t(theme)
+          - if date_events.size == 0
+            .no_events
+              | Расписание на этот день уточняется.
+          - else
+            .events
+              - date_events.sort_by(&:started_at).each do |event|
+                .events_item
+                  .themes
+                    - event.themes.reject(&:blank?).each do |theme|
+                      .themes_item class=theme
+                        = t(theme)
 
-                .time
-                  => l(event.started_at, format: :human)
-                  | —
-                  =< l(event.ended_at, format: :human)
+                  .time
+                    => l(event.started_at, format: :human)
+                    | —
+                    =< l(event.ended_at, format: :human)
 
-                  - if event.book.present?
-                    .time_book
-                      | По записи
+                    - if event.book.present?
+                      .time_book
+                        | По записи
 
 
-                .title
-                  = event.title
+                  .title
+                    = event.title
 
-                .desc
-                  = event.desc
+                  - if event.desc.present?
+                    .desc
+                      = markdown event.desc
 
-                  - if event.book.present?
-                    .desc_book
-                      = link_to 'Записаться на лекцию', '#', class: :btn
+                    - if event.book.present?
+                      .desc_book
+                        = link_to 'Записаться на лекцию', '#', class: :btn
 
-                - if event.speakers.any?
-                  .speakers
-                    = event.speakers.map(&:title).to_sentence
+                  - if event.speakers.any?
+                    .speakers
+                      - event.speakers.each do |speaker|
+                        .speakers_item
+                          .btn_link
+                          .image
+                            - if speaker.photo?
+                              = image_tag speaker.photo.small.url
+                            - else
+                              .img
+                                = speaker.skr
+
+                          .name
+                            = speaker.title
+
+                        .speakers_item_desc
+                          = markdown speaker.desc
+
 
           - if date != @section.ended_at.to_date
             .next_day

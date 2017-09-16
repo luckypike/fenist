@@ -11,6 +11,10 @@ class Speaker < ApplicationRecord
     names[0]
   end
 
+  def skr
+    names.map(&:first).join('')
+  end
+
   def last_name
     case names.size
     when 1

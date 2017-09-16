@@ -26,6 +26,11 @@ h2, .h3 {
   @include fs_h3;
 }
 
+@mixin fs_common {
+  font-size: $yr * 2;
+  line-height: $yr * 3;
+}
+
 @mixin fs_small {
   font-size: $yr * 1.75;
   line-height: $yr * 2.5;

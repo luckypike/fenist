@@ -10,9 +10,10 @@
       .image
         - if section.events.size > 0
           .date
-            = l(section.started_at.to_date, format: :date_d)
-            br
-            = l(section.ended_at.to_date, format: :date_d)
+            .date_container
+              = l(section.started_at.to_date, format: :date_d)
+              br
+              = l(section.ended_at.to_date, format: :date_d)
 
         .img_ar
 
@@ -21,19 +22,13 @@
           = section.title
 
         .desc
-          = section.desc
+          = markdown section.desc
 
         - if section.events.size > 1
           .more
             = link_to 'Расписание />', [:section, fest_slug: section.fest.slug, section_slug: section.slug], class: :btn
 
         - elsif section.events.size == 1
-          - event = section.events.first
 
-          .event
-            .title.h3
-              = event.title
-            .desc
-              = event.desc
 
 
