@@ -35,6 +35,19 @@
       }
     }
 
+    .places {
+      margin-top: $yr * 1.5;
+    }
+
+    .place {
+      margin-top: $yr * 1.5;
+      color: $op_color;
+      display: inline-block;
+      background: $hl_color;
+      background: linear-gradient(to right, $hp_color, $hl_color);
+      padding: $yr $xr;
+    }
+
     .desc {
       @include fs_small;
 
@@ -363,6 +376,17 @@
 
     .desc {
       @include fs_small;
+
+      margin-bottom: $yr * 2;
+    }
+
+    .place {
+      margin-top: $yr * 1.5;
+      color: $op_color;
+      display: inline-block;
+      background: $hl_color;
+      background: linear-gradient(to right, $hp_color, $hl_color);
+      padding: $yr $xr;
     }
   }
 
@@ -525,6 +549,36 @@
           }
         }
 
+        .place {
+          @include fs_small;
+
+          display: inline-block;
+          background: $hl_color;
+          color: $op_color;
+          background: linear-gradient(to right, $hp_color, $hl_color);
+          padding: $yr / 4 $xr / 2;
+          max-width: 400px;
+          margin-bottom: $yr;
+
+          &_desc {
+            // @include fs_small;
+
+            display: none;
+          }
+
+          &_title {
+            .full {
+              // display: inline-block;
+              display: none;
+            }
+
+            .short {
+              // display: inline-block;
+
+            }
+          }
+        }
+
         .speakers {
           @include fs_small;
 
@@ -561,6 +615,22 @@
             right: -$xr;
             top: -$yr;
             bottom: -$yr;
+          }
+
+          .place {
+            &_title {
+              .full {
+                display: block;
+              }
+
+              .short {
+                display: none;
+              }
+            }
+
+            &_desc {
+              display: block;
+            }
           }
 
           .speakers {

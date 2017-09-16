@@ -9,6 +9,10 @@
     .desc
       = @section.desc
 
+    - if @section.place
+      .place
+        = @section.place.title
+
   .page_section_days
     .days
       - @section.started_at.to_date.upto(@section.ended_at.to_date) do |date|
@@ -49,6 +53,18 @@
 
                   .title
                     = event.title
+
+                  - if event.place && event.place != @section.place
+                    .place
+                      .place_title
+                        .full
+                          = event.place.title
+
+                        .short
+                          = event.place.title_short ? event.place.title_short : event.place.title
+
+                      .place_desc
+                        = markdown event.place.desc
 
                   - if event.desc.present?
                     .desc

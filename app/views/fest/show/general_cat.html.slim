@@ -21,6 +21,14 @@
         .title.h2
           = section.title
 
+        - if section.place
+          .place
+            = section.place.title
+
+        - else
+          / .places
+            | Несколько площадок
+
         .desc
           = markdown section.desc
 
