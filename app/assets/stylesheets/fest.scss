@@ -690,6 +690,27 @@
           }
         }
 
+        .partner {
+          display: flex;
+
+          &_image {
+            border: 2px solid $pr_color;
+            width: 64px;
+            height: 64px;
+            flex-shrink: 0;
+            margin-right: $xr;
+
+            img {
+              display: block;
+              width: 100%;
+            }
+          }
+
+          &_title {
+            align-self: center;
+          }
+        }
+
         &.active {
           color: $op_color;
 

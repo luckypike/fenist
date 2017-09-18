@@ -110,6 +110,15 @@
                           = markdown speaker.desc
 
 
+                  - if event.partner.present?
+                    .partner
+                      .partner_image
+                        = image_tag event.partner.logo if event.partner.logo?
+
+                      .partner_title
+                        = event.partner.title
+
+
           - if date != @section.ended_at.to_date
             .next_day
               .btn_sub data-date=(date + 1.day)
