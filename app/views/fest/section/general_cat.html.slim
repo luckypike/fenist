@@ -30,17 +30,18 @@
         - date_events = @section.events.select{ |e| e.started_at.to_date == date }
         / - @section.events.group_by{ |e| e.started_at.to_date }.each do |date, date_events|
         .days_item data-date=date
-          - if date == Date.new(2017, 9, 30)
-            .marathon
-              .text
-                h2 Когнитивный марафон
-                p Модератор: Алексей Паевский
+          - if @section.id == 2
+            - if date == Date.new(2017, 9, 30)
+              .marathon
+                .text
+                  h2 Когнитивный марафон
+                  p Модератор: Алексей Паевский
 
-          - if date == Date.new(2017, 10, 1)
-            .marathon
-              .text
-                h2 Коды и интерфейсы
-                p Модератор: Артем Коржиманов
+            - if date == Date.new(2017, 10, 1)
+              .marathon
+                .text
+                  h2 Коды и интерфейсы
+                  p Модератор: Артем Коржиманов
 
           - if date_events.size == 0
             .no_events
