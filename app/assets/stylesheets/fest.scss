@@ -691,6 +691,8 @@
         }
 
         .partner {
+          @include fs_small;
+
           display: flex;
 
           &_image {
