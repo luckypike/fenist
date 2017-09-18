@@ -84,11 +84,12 @@
 
                   - if event.desc.present?
                     .desc
+                      - if event.book.present?
+                        p.desc_book
+                          = event.book
+
                       = markdown event.desc
 
-                    - if event.book.present?
-                      .desc_book
-                        = link_to 'Записаться на лекцию', '#', class: :btn
 
                   - if event.speakers.any?
                     .speakers
