@@ -8,6 +8,13 @@ module CarrierWave
       end
     end
 
+    def grayscale
+      manipulate! do |img|
+        img.colorspace 'gray'
+        img
+      end
+    end
+
     def optimize
       manipulate! do |img|
         return img unless img.mime_type.match /image\/jpeg/
