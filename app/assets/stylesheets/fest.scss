@@ -453,7 +453,58 @@
     max-width: $s;
     // margin: 0 auto;
 
+    .section_extra {
+      border: 4px solid $pr_color;
+      padding: $yr $xr;
+
+      h2 {
+        @include fs_upper;
+
+        margin-bottom: $yr;
+      }
+
+      .sub {
+        margin-bottom: $yr * 2;
+      }
+
+      .place {
+        @include fs_small;
+
+        display: inline-block;
+        background: $hl_color;
+        color: $op_color;
+        background: linear-gradient(to right, $hp_color, $hl_color);
+        padding: $yr / 4 $xr / 2;
+        max-width: 400px;
+        margin-bottom: $yr;
+      }
+
+      .desc {
+        @include fs_small;
+
+        p {
+          margin-bottom: $yr;
+        }
+        display: none;
+      }
+    }
+
+    @include mq($l) {
+      position: relative;
+
+      .section_extra {
+        position: absolute;
+
+        top: 0;
+        right: -(20rem + $xr * 2);
+        width: 20rem;
+
+      }
+    }
+
     .days {
+      margin-bottom: $yr * 4;
+
       &_item {
         display: none;
       }
@@ -478,9 +529,11 @@
         background: $op_color;
         border: 4px solid $pr_color;
         display: inline-block;
-        padding: $yr * 2 $xr;
+        padding: $yr * 2 $xr / 2;
+        min-width: 256px;
 
         h2 {
+          margin-top: $yr / 2;
           margin-bottom: $yr / 2;
         }
 
@@ -570,6 +623,10 @@
 
           margin-bottom: $yr;
           display: none;
+
+          p {
+            margin-bottom: $yr;
+          }
 
           &_book {
             margin-top: $yr;
