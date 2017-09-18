@@ -464,6 +464,35 @@
       margin-bottom: $yr * 4;
     }
 
+    .marathon {
+      background: {
+        image: image_url('pattern.svg');
+        size: 12px;
+        position: 0 0;
+      }
+
+      padding: 24px 0 36px 12px;
+      margin-bottom: 8px;
+
+      .text {
+        background: $op_color;
+        border: 4px solid $pr_color;
+        display: inline-block;
+        padding: $yr * 2 $xr;
+
+        h2 {
+          margin-bottom: $yr / 2;
+        }
+
+        p {
+          @include fs_small;
+        }
+      }
+
+      // margin-bottom: $yr * 2;
+      // text-align: center;
+    }
+
     .events {
       margin-bottom: $yr * 4;
 
