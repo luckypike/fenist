@@ -1,5 +1,7 @@
 @import 'breakpoint-sass/stylesheets/breakpoint';
 @import 'reset-css/_reset';
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 // $ff_sans: 'Noto Sans', sans-serif;
 // $ff_serif: 'Noto Serif', serif;
@@ -199,6 +201,35 @@ body {
           margin-right: 0;
         }
       }
+    }
+  }
+}
+
+.footer {
+  @include max-width();
+
+  padding: 0 $xr;
+  margin-bottom: 0 auto $yr * 4;
+
+
+  .social {
+    border: 4px solid $pr_color;
+    padding: $yr $xr;
+    max-width: 20rem;
+    margin-bottom: $yr * 4;
+
+    &_title {
+      @include fs_small;
+    }
+
+    .socials {
+
+      a {
+        color: $pr_color;
+        margin-right: $xr / 2;
+      }
+
+      font-size: 20px;
     }
   }
 }
