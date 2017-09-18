@@ -20,6 +20,8 @@ gem 'inline_svg'
 
 gem 'devise'
 
+gem 'actionview-encoded_mail_to'
+
 gem 'meta-tags'
 gem 'active_link_to'
 

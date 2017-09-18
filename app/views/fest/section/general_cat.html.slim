@@ -113,7 +113,7 @@
                   - if event.partner.present?
                     .partner
                       .partner_image
-                        = image_tag event.partner.logo if event.partner.logo?
+                        = image_tag event.partner.logo.small.url if event.partner.logo?
 
                       .partner_title
                         = event.partner.title
