@@ -209,7 +209,7 @@ body {
   @include max-width();
 
   padding: 0 $xr;
-  margin-bottom: 0 auto $yr * 4;
+  margin-bottom: $yr * 4;
 
 
   .social {
@@ -230,6 +230,22 @@ body {
       }
 
       font-size: 20px;
+    }
+  }
+
+  .like {
+    @include fs_small;
+
+    text-align: right;
+    margin-bottom: $yr * 4;
+  }
+
+  @include mq($s) {
+    display: flex;
+
+    .like {
+      align-self: flex-end;
+      margin-left: auto;
     }
   }
 }
