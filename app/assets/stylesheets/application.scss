@@ -262,6 +262,13 @@ body {
     }
   }
 
+  &_inline {
+    border-bottom: 2px solid $pr_color;
+    color: $pr_color;
+    display: inline-block;
+    text-decoration: none;
+  }
+
   &:hover {
     border-color: $hl_color;
   }
