@@ -278,6 +278,12 @@ body {
     }
   }
 
+  &_inv {
+    background: $pr_color;
+    color: $op_color;
+    border-color: $op_color;
+  }
+
   &_inline {
     border-bottom: 2px solid $pr_color;
     color: $pr_color;

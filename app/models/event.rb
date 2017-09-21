@@ -11,4 +11,8 @@ class Event < ApplicationRecord
   has_and_belongs_to_many :speakers
 
   validates_presence_of :title, :started_at, :ended_at
+
+  def book_as_link?
+    self.book.start_with? 'http'
+  end
 end

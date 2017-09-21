@@ -82,11 +82,14 @@
                       .place_desc
                         = markdown event.place.desc
 
-                  - if event.desc.present?
+                  - if event.desc.present? || event.book.present?
                     .desc
                       - if event.book.present?
                         p.desc_book
-                          = event.book
+                          - if event.book_as_link?
+                            = link_to 'Записаться', event.book, class: [:btn, :btn_inv], target: '_blank'
+                          - else
+                            = event.book
 
                       = markdown event.desc
 
