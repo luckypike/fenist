@@ -12,7 +12,7 @@ gem 'puma'
 
 gem 'sass-rails', github: 'rails/sass-rails'
 gem 'autoprefixer-rails', github: "ai/autoprefixer-rails"
-gem 'font-awesome-sass'
+# gem 'font-awesome-sass'
 gem 'jbuilder'
 
 gem 'slim-rails'

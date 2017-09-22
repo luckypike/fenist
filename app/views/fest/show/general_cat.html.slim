@@ -2,8 +2,15 @@
   .page_fest_description
     .desc
       = @fest.desc
+
     .about
       = link_to 'О фестивале', [:about, fest_slug: @fest.slug], class: :btn_sub
+
+    / .tg
+      | По всем вопросам вам помогут в нашем телеграм канале
+      a href="//t.me/fenistfest" class="tg" target="_blank"
+        = inline_svg 'icons/tg.svg'
+        | fenistfest
 
   .page_fest_opening
     .title

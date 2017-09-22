@@ -1,7 +1,5 @@
 @import 'breakpoint-sass/stylesheets/breakpoint';
 @import 'reset-css/_reset';
-@import "font-awesome-sprockets";
-@import "font-awesome";
 
 // $ff_sans: 'Noto Sans', sans-serif;
 // $ff_serif: 'Noto Serif', serif;
@@ -53,6 +51,71 @@ body {
   }
 }
 
+
+.socials {
+  @include max_width();
+
+  padding: $yr * 2 $xr 0;
+  // margin-bottom: -$yr;
+  display: flex;
+  justify-content: flex-end;
+
+  > a {
+    display: block;
+    margin-right: $xr / 2;
+
+    svg {
+
+      &.in {
+        .bg {
+          // fill: #000;
+        }
+      }
+
+      display: block;
+      width: 24px;
+      height: 24px;
+
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+
+    &.tg {
+      text-decoration: none;
+      color: $pr_color;
+      display: flex;
+      margin: (-$yr / 2) 0 (-$yr / 2) auto;
+
+      .text {
+        @include fs_small;
+        align-self: center;
+        display: none;
+        margin-right: $xr;
+      }
+
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  @include mq($s) {
+    > a {
+      &.tg {
+
+        .text {
+          display: block;
+        }
+        margin: (-$yr / 2) 0 (-$yr / 2) $xr * 2;
+      }
+    }
+  }
+  // margin: 0 $xr $yr;
+}
 
 .header {
   padding: $yr * 3 $xr;

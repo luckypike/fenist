@@ -13,6 +13,28 @@ html
     = javascript_include_tag 'application'
 
   body class="body_fest_#{@current_fest.code}"
+    .socials
+      a href="//fb.com/fenistnn" class="fb" target="_blank"
+        = inline_svg 'icons/fb.svg'
+
+      a href="//vk.com/fenist" class="vk" target="_blank"
+        = inline_svg 'icons/vk.svg'
+
+      a href="//twitter.com/fenistnn" class="t" target="_blank"
+        = inline_svg 'icons/t.svg'
+
+      a href="//www.instagram.com/fenistnn/" class="i" target="_blank"
+        = inline_svg 'icons/i.svg'
+
+      a href="//www.youtube.com/channel/UCni93LSiaWCThIWFdLvyb6A" class="yt" target="_blank"
+        = inline_svg 'icons/yt.svg'
+
+      a href="//t.me/fenistfest" class="tg" target="_blank"
+        span.text
+          | Telegram-канал для вопросов
+        = inline_svg 'icons/tg.svg'
+
+
     header.header
       = link_to [:fest, fest_slug: @current_fest.slug], class: :header_logo do
         .header_logo_icon
@@ -47,22 +69,6 @@ html
     = yield
 
     footer.footer
-      .social
-        .social_title
-          | Следите за нами в соцсетях:
-
-        .socials
-          a href="//fb.com/fenistnn" class="i" target="_blank"
-            i class="fa fa-facebook" aria-hidden="true"
-          a href="//vk.com/fenist" class="i" target="_blank"
-            i class="fa fa-vk" aria-hidden="true"
-          a href="//twitter.com/fenistnn" class="i" target="_blank"
-            i class="fa fa-twitter" aria-hidden="true"
-          a href="//www.instagram.com/fenistnn/" class="i" target="_blank"
-            i class="fa fa-instagram" aria-hidden="true"
-          a href="//www.youtube.com/channel/UCni93LSiaWCThIWFdLvyb6A" class="i" target="_blank"
-            i class="fa fa-youtube-play" aria-hidden="true"
-
       .like
         = link_to 'L..IKE', 'https://luckypike.com', target: '_blank', class: [:btn_inline]
 

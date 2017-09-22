@@ -13,6 +13,27 @@
     .desc {
       margin-bottom: $yr * 1.5;
     }
+
+    .tg {
+      margin-top: $yr * 4;
+      text-align: center;
+
+      a {
+        display: inline-flex;
+        text-decoration: none;
+        align-items: center;
+        color: $pr_color;
+        margin: $yr auto 0;
+
+        svg {
+          display: block;
+          width: 32px;
+          height: 32px;
+          margin-right: $xr / 2;
+        }
+
+      }
+    }
   }
 
   &_opening {
@@ -370,6 +391,7 @@
 
   @include mq($s) {
     &_description {
+      align-self: center;
       margin-top: $yr * 4;
       width: 6 / 12 * 100%;
     }
