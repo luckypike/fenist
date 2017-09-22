@@ -2,13 +2,28 @@
 
 .page_fest {
   padding-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+
 
   &_description {
-    margin-bottom: $yr * 6;
+    margin-bottom: $yr * 4;
 
     .desc {
       margin-bottom: $yr * 1.5;
     }
+  }
+
+  &_opening {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+
+    background: $hl_color;
+    background: linear-gradient(to right, $hp_color, $hl_color);
+    color: $op_color;
+    margin-bottom: $yr * 4;
+    padding: $yr * 2 $xr;
   }
 
   &_content {
@@ -353,9 +368,37 @@
     }
   }
 
+  @include mq($s) {
+    &_description {
+      margin-top: $yr * 4;
+      width: 6 / 12 * 100%;
+    }
+
+    &_opening {
+      margin-top: $yr * 4;
+      order: -1;
+      width: 5 / 12 * 100%;
+      margin-right: 1 / 12 * 100%;
+    }
+  }
+
+  @include mq($m) {
+    &_content_1 {
+      margin-top: $yr * 8;
+    }
+  }
+
   @include mq($l) {
-    display: flex;
-    flex-wrap: wrap;
+    &_description {
+      width: 5 / 12 * 100%;
+      margin-right: 1 / 12 * 100%;
+    }
+
+    &_opening {
+      order: 0;
+      width: 4 / 12 * 100%;
+      margin-right: 2 / 12 * 100%;
+    }
   }
 }
 

@@ -5,6 +5,14 @@
     .about
       = link_to 'О фестивале', [:about, fest_slug: @fest.slug], class: :btn_sub
 
+  .page_fest_opening
+    .title
+      | Открытие фестиваля
+      br
+      | 25 сентября в 15:00
+      br
+      | Парк науки ННГУ, Ульянова&nbsp;10Б
+
   - @fest.sections.each do |section|
     .page_fest_content class="page_fest_content_#{section.id}"
       .image
