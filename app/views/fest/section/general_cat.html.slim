@@ -50,7 +50,7 @@
               | Расписание на этот день уточняется.
           - else
             .events
-              - date_events.sort_by(&:started_at).each do |event|
+              - date_events.sort_by{ |e| [e.started_at, e.ended_at] }.each do |event|
                 .events_item
                   .themes
                     - event.themes.reject(&:blank?).each do |theme|
