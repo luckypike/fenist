@@ -12,8 +12,6 @@ $(function(){
     _days_items.not(this).removeClass('active');
     _this.addClass('active');
 
-    // _this.data('data');
-
     _days_sc_items.each(function(i, e) {
       var _d = $(this);
 
@@ -37,7 +35,11 @@ $(function(){
   });
 
   if(_days.has('.active').length) {
-    $('.active', _days_items).trigger('click');
+    $.each(_days_items, function(i, el){
+      if($(el).is('.active')) {
+        $(el).trigger('click');
+      }
+    });
   } else {
     _days_items.first().trigger('click');
   }
