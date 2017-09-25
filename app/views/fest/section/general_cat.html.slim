@@ -124,7 +124,7 @@
                         = event.partner.title
                         - if event.partner.url.present?
                           br
-                          = link_to event.partner.url_human, event.partner.url, class: [:btn_inline]
+                          = link_to event.partner.url_human, event.partner.url, class: [:btn_inline], target: '_blank', rel: :nofollow
 
 
           - if date != @section.ended_at.to_date

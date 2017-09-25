@@ -9,4 +9,4 @@
           = partner.title
           - if partner.url.present?
             br
-            = link_to partner.url_human, partner.url, class: [:btn_inline]
+            = link_to partner.url_human, partner.url, class: [:btn_inline], target: '_blank', rel: :nofollow
