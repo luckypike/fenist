@@ -122,6 +122,9 @@
                         | При поддержке
                         br
                         = event.partner.title
+                        - if event.partner.url.present?
+                          br
+                          = link_to event.partner.url_human, event.partner.url, class: [:btn_inline]
 
 
           - if date != @section.ended_at.to_date

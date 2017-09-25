@@ -7,3 +7,6 @@
       .partners_list_item
         .title
           = partner.title
+          - if partner.url.present?
+            br
+            = link_to partner.url_human, partner.url, class: [:btn_inline]
