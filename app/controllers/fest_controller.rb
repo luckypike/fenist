@@ -2,7 +2,11 @@ class FestController < ApplicationController
   before_action :set_fest
 
   def show
-    render "fest/show/#{@fest.code}" if lookup_context.template_exists?(@fest.code, 'fest/show')
+    if @fest.is_react?
+      render :app
+    else
+      render "fest/show/#{@fest.code}" if lookup_context.template_exists?(@fest.code, 'fest/show')
+    end
   end
 
   def section

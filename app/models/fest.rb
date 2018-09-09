@@ -15,6 +15,10 @@ class Fest < ApplicationRecord
     Rails.application.secrets[:sitename] + ' ' + self.started_at.year.to_s + ': ' + self.title
   end
 
+  def is_react?
+    id > 1
+  end
+
   # def smart_slug
   #   self.id != Rails.application.secrets[:fest] ? self.slug : nil
   # end

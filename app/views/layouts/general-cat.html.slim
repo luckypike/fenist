@@ -1,0 +1,77 @@
+doctype html
+html
+  head
+    = display_meta_tags site: @current_fest.title_full, reverse: true, separator: '—'
+
+    = tag('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' })
+    = tag(:link, rel: 'manifest', href: '/manifest.json')
+
+    = csrf_meta_tags
+    = favicon_link_tag '/favicon.ico'
+
+    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Roboto+Mono:400,500&amp;subset=cyrillic'
+    = javascript_include_tag 'application'
+
+  body class="body_fest_#{@current_fest.code}"
+    .socials
+      a href="//fb.com/fenistnn" class="fb" target="_blank"
+        = inline_svg 'icons/fb.svg'
+
+      a href="//vk.com/fenist" class="vk" target="_blank"
+        = inline_svg 'icons/vk.svg'
+
+      a href="//twitter.com/fenistnn" class="t" target="_blank"
+        = inline_svg 'icons/t.svg'
+
+      a href="//www.instagram.com/fenistnn/" class="i" target="_blank"
+        = inline_svg 'icons/i.svg'
+
+      a href="//www.youtube.com/channel/UCni93LSiaWCThIWFdLvyb6A" class="yt" target="_blank"
+        = inline_svg 'icons/yt.svg'
+
+      a href="//t.me/fenistfest" class="tg" target="_blank"
+        span.text
+          | Telegram-канал для вопросов
+        = inline_svg 'icons/tg.svg'
+
+
+    header.header
+      = link_to [:fest, fest_slug: @current_fest.slug], class: :header_logo do
+        .header_logo_icon
+          = inline_svg 'logo.svg'
+
+        .header_logo_name
+          | Фенист #{@current_fest.started_at.year}
+          br
+          = @current_fest.title
+
+      .header_menu
+        .header_menu_burger
+          svg viewBox="0 0 36 36"
+            line x1="9" y1="12" x2="27" y2="12"
+            line x1="9" y1="17" x2="27" y2="17"
+            line x1="9" y1="22" x2="27" y2="22"
+
+      .header_nav
+        .header_nav_item
+          = active_link_to 'О фестивале', [:about, fest_slug: @current_fest.slug]
+
+        .header_nav_item
+          = active_link_to 'Программа', [:fest, fest_slug: @current_fest.slug], active: :exact
+
+        .header_nav_item
+          = active_link_to 'Спикеры', [:speakers, fest_slug: @current_fest.slug]
+
+        .header_nav_item
+          = active_link_to 'Партнеры', [:partners, fest_slug: @current_fest.slug]
+
+
+    = yield
+
+    footer.footer
+      .like
+        = link_to 'L..IKE', 'https://luckypike.com', target: '_blank', class: [:btn_inline]
+
+
+    == render '/layouts/c'

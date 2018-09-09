@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
-
   before_action :set_fests
+
+  layout :fest_layout
 
   private
   def set_fests
@@ -16,5 +16,9 @@ class ApplicationController < ActionController::Base
     # else
     #   @current_fest = @active_fest
     # end
+  end
+
+  def fest_layout
+    @current_fest.slug
   end
 end

@@ -1,0 +1,49 @@
+@import './Vars.css';
+
+.root {
+  display: flex;
+  padding: 2rem;
+  max-width: 50rem;
+  margin: 0 auto;
+  font-size: 14px;
+
+
+  @media (--s) {
+    padding: 4rem;
+    font-size: 16px;
+
+  }
+}
+
+.logo {
+  font-size: 20px;
+
+  a {
+    color: #000;
+  }
+  /* text-align: right; */
+}
+
+.nav {
+  margin-left: auto;
+  /* align-self: center; */
+
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      &:not(:last-child) {
+        margin-right: 2em;
+      }
+    }
+  }
+
+  a {
+    &.active {
+      /* color: color(#fff b(10%)); */
+    }
+  }
+}

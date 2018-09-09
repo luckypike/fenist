@@ -6,13 +6,17 @@ git_source(:github) do |repo_name|
 end
 
 
-gem 'rails', '~> 5.1.3'
+gem 'rails'
 gem 'sqlite3'
 gem 'puma'
 
-gem 'sass-rails', github: 'rails/sass-rails'
-gem 'autoprefixer-rails', github: "ai/autoprefixer-rails"
+gem 'sass-rails'
+gem 'autoprefixer-rails'
 # gem 'font-awesome-sass'
+
+gem 'webpacker'
+gem 'react-rails'
+
 gem 'jbuilder'
 
 gem 'slim-rails'
@@ -27,7 +31,7 @@ gem 'meta-tags'
 gem 'active_link_to'
 
 gem 'simple_form'
-gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'carrierwave'
 gem 'mini_magick'
 gem 'redcarpet'
 
@@ -52,4 +56,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-

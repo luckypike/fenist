@@ -1,0 +1,15 @@
+@import './Vars.css';
+
+.root {
+  padding: 2rem;
+  max-width: 50rem;
+  margin: 0 auto;
+
+  @media (--s) {
+    padding: 4rem;
+  }
+}
+
+.intro {
+  margin: 0 0 2rem;
+}

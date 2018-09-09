@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title 2018
+
+    = tag('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' })
+    = favicon_link_tag '/favicon.ico'
+    = tag('link', { rel: 'manifest', href: '/manifest.json' })
+
+  body
+    = yield
+
+    = stylesheet_pack_tag 'application'
+    = javascript_pack_tag 'application', async: true
+
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Tinos:400,700&amp;subset=cyrillic'
