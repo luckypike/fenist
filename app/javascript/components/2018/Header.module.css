@@ -1,17 +1,37 @@
 @import './Vars.css';
 
 .root {
-  display: flex;
-  padding: 2rem;
-  max-width: 50rem;
+  background-color: var(--hl_color);
+}
+
+.intro {
   margin: 0 auto;
-  font-size: 14px;
+  max-width: 50rem;
+  padding: 2rem;
 
 
   @media (--s) {
-    padding: 4rem;
-    font-size: 16px;
+    padding: 2rem 4rem;
+  }
+  /* max-width: 50rem; */
+}
 
+.sub {
+  /* max-width: 25rem; */
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.header {
+  display: flex;
+  /* max-width: 50rem; */
+  margin: 0 auto;
+  font-size: 14px;
+  padding: 1rem 2rem;
+
+  @media (--s) {
+    padding: 2rem 4rem;
+    font-size: 16px;
   }
 }
 
@@ -42,6 +62,8 @@
   }
 
   a {
+    color: #000;
+
     &.active {
       /* color: color(#fff b(10%)); */
     }

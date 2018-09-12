@@ -10,11 +10,11 @@ class Section < ApplicationRecord
   end
 
   def started_at
-    @started_at = events.order(started_at: :asc).first.started_at rescue nil
+    @started_at = events.sort_by(&:started_at).first.started_at rescue nil
   end
 
   def ended_at
-    @ended_at ||= events.order(ended_at: :desc).first.ended_at
+    @ended_at ||= events.sort_by(&:ended_at).reverse.first.ended_at rescue nil
   end
 
   def same_month_dates

@@ -1,7 +1,8 @@
 @import './Vars.css';
 
 body {
-  background-color: #fcfcfc;
+  background-color: #fefefe;
+
 }
 
 html {
@@ -13,16 +14,26 @@ html {
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 a {
   color: var(--hl_color);
   text-decoration: none;
 }
 
-h1, h2, h3 {
+h1, h2, h3, p {
   font-weight: 400;
   margin: 0 0 1rem;
 }
 
 h1 {
   font-size: 3rem;
+  line-height: 1.2em;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.1em;
 }

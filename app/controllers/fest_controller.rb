@@ -5,7 +5,8 @@ class FestController < ApplicationController
     if @fest.is_react?
       respond_to do |format|
         format.html { render :app }
-        format.json
+        format.json {
+        }
       end
     else
       render "fest/show/#{@fest.code}" if lookup_context.template_exists?(@fest.code, 'fest/show')
