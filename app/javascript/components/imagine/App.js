@@ -22,13 +22,13 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Helmet
-          defaultTitle={this.props.title}
-          titleTemplate={'%s — ' + this.props.title}
+          defaultTitle={`${this.props.title} 2018: ${this.props.fest.title}`}
+          titleTemplate={'%s — ' + `${this.props.title} 2018: ${this.props.fest.title}`}
         />
         <RoutesContext.Provider value={routes}>
           <Router>
             <React.Fragment>
-              <Header />
+              <Header title={this.props.fest.title} />
 
               <Switch>
                 <Route path={routes.fest_path} component={Index} exact strict />

@@ -44,11 +44,6 @@ class Index extends React.Component {
 
     return (
       <div className={styles.root}>
-
-        <Helmet>
-          <title>2018</title>
-        </Helmet>
-
         <div className={styles.header}>
           <h1>
             Расписание
@@ -120,7 +115,7 @@ class Section extends React.Component {
 
     return (
       <div className={styles.section}>
-        <h2>
+        <h2 className={styles[`section_${section.id}`]}>
           {section.title}
         </h2>
 
@@ -141,9 +136,11 @@ class Section extends React.Component {
             {events.map(event =>
               <div className={styles.event} key={event.id}>
                 <div className={styles.time}>
-                  {moment.utc(event.started_at).format('HH:mm')}
-                   — 
-                  {moment.utc(event.ended_at).format('HH:mm')}
+                  <span>
+                    {moment.utc(event.started_at).format('HH:mm')}
+                     — 
+                    {moment.utc(event.ended_at).format('HH:mm')}
+                  </span>
                 </div>
                 <div className={styles.speakers}>
                   {event.speakers.map(speaker => speaker.title).join(', ')}
