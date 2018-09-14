@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <style type="text/css">
+      g {
+        -webkit-animation: x 3s linear infinite;
+        animation: x 3s linear infinite;
+        -webkit-transform-box: fill-box;
+        transform-box: fill-box;
+        -webkit-transform-origin: center;
+        transform-origin: center;
+      }
+
+      @-webkit-keyframes x {
+         from { transform: rotateZ(0deg); }
+           to { transform: rotateZ(360deg); }
+      }
+
+      @keyframes x {
+         from { transform: rotateZ(0deg); }
+           to { transform: rotateZ(360deg); }
+      }
+  </style>
+
+  <g>
+    <circle cx="639.5" cy="245.5" r="16.5" style="fill: #fff"/>
+    <circle cx="636.13" cy="241.88" r="5.13"/>
+  </g>
+  <g>
+    <circle cx="126.51" cy="500" r="14.87" style="fill: #fff"/>
+    <circle cx="127.75" cy="495.71" r="4.62"/>
+  </g>
+  <g>
+    <circle cx="595.51" cy="488.67" r="12.5" style="fill: #fff"/>
+    <circle cx="598.95" cy="487.18" r="3.88"/>
+  </g>
+  <g>
+    <ellipse cx="708.83" cy="740.85" rx="13.8" ry="15.21" transform="translate(-309.34 619.91) rotate(-39.49)" style="fill: #fff"/>
+    <ellipse cx="704.53" cy="740.06" rx="4.29" ry="4.73" transform="translate(-309.82 616.99) rotate(-39.49)"/>
+  </g>
+  <g>
+    <circle cx="219.77" cy="737.42" r="13.97" style="fill: #fff"/>
+    <circle cx="220.72" cy="742.1" r="3.41"/>
+  </g>
+  <g>
+    <circle cx="93.92" cy="238.92" r="10.5" style="fill: #fff"/>
+    <circle cx="98.95" cy="242.6" r="2.04"/>
+  </g>
+</svg>

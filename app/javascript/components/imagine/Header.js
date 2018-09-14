@@ -12,7 +12,11 @@ class Header extends React.Component {
   render () {
     return (
       <div className={styles.root}>
-        <div className={styles.fish}></div>
+        <div className={styles.fish}>
+          <div className={styles.eyes}>
+            
+          </div>
+        </div>
         <header className={styles.header}>
           <div className={styles.logo}>
             <Link to={this.props.routes.fest_path}>
