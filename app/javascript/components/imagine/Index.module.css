@@ -82,11 +82,13 @@
   display: none;
 
   @media (--s) {
-    display: inline;
+    display: block;
   }
 }
 
 .short {
+  display: block;
+
   @media (--s) {
     display: none;
   }
