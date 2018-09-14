@@ -28,7 +28,7 @@ class Index extends React.Component {
     }
   }
 
-  _loadAsyncData(id) {
+  _loadAsyncData() {
     this._asyncRequest = axios.CancelToken.source();
 
     axios.get(`${this.props.routes.fest_path}.json`, { cancelToken: this._asyncRequest.token })

@@ -10,6 +10,7 @@ import { RoutesContext } from '../Context/RoutesContext';
 
 import Header from './Header';
 import Index from './Index';
+import Speakers from './Speakers';
 
 import { Helmet } from 'react-helmet';
 
@@ -32,6 +33,7 @@ class App extends React.Component {
 
               <Switch>
                 <Route path={routes.fest_path} component={Index} exact strict />
+                <Route path={routes.speakers_path} component={Speakers} exact strict />
               </Switch>
             </React.Fragment>
           </Router>

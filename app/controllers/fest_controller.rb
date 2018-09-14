@@ -5,8 +5,7 @@ class FestController < ApplicationController
     if @fest.is_react?
       respond_to do |format|
         format.html { render :app }
-        format.json {
-        }
+        format.json
       end
     else
       render "fest/show/#{@fest.code}" if lookup_context.template_exists?(@fest.code, 'fest/show')
@@ -24,6 +23,12 @@ class FestController < ApplicationController
 
   def speakers
     @speakers = @fest.speakers.uniq.sort_by(&:last_name)
+    if @fest.is_react?
+      respond_to do |format|
+        format.html { render :app }
+        format.json
+      end
+    end
   end
 
   def partners

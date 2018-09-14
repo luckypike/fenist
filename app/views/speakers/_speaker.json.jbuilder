@@ -1,1 +1,1 @@
-json.extract! speaker, :id, :title
+json.extract! speaker, :id, :title, :desc
