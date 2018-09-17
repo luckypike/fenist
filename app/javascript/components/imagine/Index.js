@@ -64,7 +64,8 @@ class Index extends React.Component {
 
 class Section extends React.Component {
   state = {
-    active: null
+    active: null,
+    open: false,
   }
 
   constructor(props) {
@@ -74,16 +75,9 @@ class Section extends React.Component {
     this.ended_at = this.props.section.ended_at ? moment.utc(this.props.section.ended_at) : null;
 
     this.days = [];
-    // for(let m = moment(this.started_at); m.diff(this.ended_at, 'days') <= 0; m.add(1, 'days')) {
     for (let m = moment(this.started_at); m.isBefore(this.ended_at); m.add(1, 'days')) {
-      // console.log(moment(m).format('DD MMMM'));
       this.days.push(moment(m));
     }
-
-
-
-    // console.log(this.days);
-    // console.log(this);
   }
 
   componentDidMount() {
@@ -100,8 +94,14 @@ class Section extends React.Component {
 
   handleDayClick = (day) =>  {
     this.setState({
-      active: moment(day)
+      active: moment(day),
     });
+  }
+
+  handleToggleClick = () => {
+    this.setState(prevState => ({
+      open: !prevState.open
+    }));
   }
 
   render () {
@@ -110,12 +110,16 @@ class Section extends React.Component {
 
     if(!active) return null;
 
-    const events = section.events.filter(event => moment.utc(event.started_at).isSame(active, 'day'));
+    let events = section.events.filter(event => moment.utc(event.started_at).isSame(active, 'day'));
+    const eventsCount = events.length;
+    if(!this.state.open) {
+      events = events.slice(0, 2);
+    }
 
 
     return (
-      <div className={styles.section}>
-        <h2 className={styles[`section_${section.id}`]}>
+      <div className={classNames(styles.section, styles[`section_${section.id}`])}>
+        <h2>
           {section.title}
         </h2>
 
@@ -142,15 +146,34 @@ class Section extends React.Component {
                     {moment.utc(event.ended_at).format('HH:mm')}
                   </span>
                 </div>
-                <div className={styles.speakers}>
-                  {event.speakers.map(speaker => speaker.title).join(', ')}
-                </div>
-                <div className={styles.title}>
-                  {event.title}
-                </div>
+                <div className={styles.content}>
+                  {event.place &&
+                    <div className={styles.place}>
+                      {event.place.title_short || event.place.title}, {event.place.desc}
+                    </div>
+                  }
 
+                  <div className={styles.speakers}>
+                    {event.speakers.map(speaker => speaker.title).join(', ')}
+                  </div>
+
+                  <div className={styles.title}>
+                    {event.title}
+                  </div>
+                  {event.desc &&
+                    <div className={styles.desc}>
+                      {event.desc}
+                    </div>
+                  }
+                </div>
               </div>
             )}
+          </div>
+        }
+
+        {eventsCount > 2 &&
+          <div className={styles.more} onClick={this.handleToggleClick}>
+            {this.state.open ? 'Свернуть' : 'Полное расписание'}
           </div>
         }
       </div>

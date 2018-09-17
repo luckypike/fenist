@@ -14,7 +14,7 @@
   top: 0;
   background: var(--hl_color) url('../../images/imagine/fish_pattern.jpg') left top;
   background-size: 50% auto;
-  animation-duration: 10s;
+  animation-duration: 60s;
   animation-name: scroll;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -22,12 +22,12 @@
   z-index: -1;
 
   @media (--s) {
-    animation-duration: 20s;
+    animation-duration: 120s;
     background-size: 25% auto;
   }
 
   @media (--l) {
-    animation-duration: 30s;
+    animation-duration: 180s;
     background-size: 12.5% auto;
   }
 }
@@ -99,6 +99,7 @@
   margin: 0 auto;
   font-size: 14px;
   padding: 1rem;
+  position: relative;
 
   @media (--s) {
     padding: 2rem 4rem;
@@ -123,18 +124,14 @@
     width: 40px;
     height: 40px;
     margin-right: 0.5em;
-    /* width: 20px; */
-
   }
-  /* text-align: right; */
 }
 
 .nav {
   margin-left: auto;
-  align-self: center;
+  /* align-self: center; */
 
   ul {
-    /* display: flex; */
     margin: 0;
     padding: 0;
     list-style: none;
@@ -167,4 +164,69 @@
       /* color: color(#fff b(10%)); */
     }
   }
+}
+
+.years {
+  position: absolute;
+  left: 1rem;
+  top: 100%;
+  display: flex;
+
+  @media (--s) {
+    top: 2rem;
+    left: 14rem;
+  }
+}
+
+.year {
+  background: #fff;
+  box-shadow: inset 0 0 0 2px #000;
+  color: #000;
+  display: block;
+  font-size: 14px;
+  line-height: 1.125rem;
+  padding: 0.1875rem 0.5em 0.0625rem;
+
+  &:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+}
+
+.active {
+  color: #fff;
+  background: #000;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  margin-right: 0.5rem;
+  line-height: 30px;
+  font-size: 14px;
+  background-position: 5px 5px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+.fb { background-image: url('../../images/icons/fb.svg'); }
+.vk { background-image: url('../../images/icons/vk.svg'); }
+.tw { background-image: url('../../images/icons/t.svg'); }
+.yt { background-image: url('../../images/icons/yt.svg'); }
+.in { background-image: url('../../images/icons/i.svg'); }
+
+
+.tg {
+  background-image: url('../../images/icons/tg.svg');
+  width: auto;
+  padding: 0 10px 0 40px;
+  white-space: nowrap;
+  margin-bottom: 0.4rem;
+  overflow: hidden;
 }
