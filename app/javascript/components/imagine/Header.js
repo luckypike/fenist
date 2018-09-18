@@ -50,9 +50,12 @@ class Header extends React.Component {
             <a href="/general-cat" className={styles.year}>
               2017
             </a>
-            <a href="http://2016.fenist.org/" className={styles.year}>
-              2016
-            </a>
+
+            {/*
+              <a href="http://2016.fenist.org/" className={styles.year}>
+                2016
+              </a>
+            */}
           </div>
         </header>
 
