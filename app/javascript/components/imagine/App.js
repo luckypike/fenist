@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 // import { I18nContext } from '../Context/I18nContext';
 import { RoutesContext } from '../Context/RoutesContext';
 
+import { YMInitializer } from 'react-yandex-metrika';
+
 import Header from './Header';
 import Index from './Index';
 import Speakers from './Speakers';
@@ -35,6 +37,18 @@ class App extends React.Component {
                 <Route path={routes.fest_path} component={Index} exact strict />
                 <Route path={routes.speakers_path} component={Speakers} exact strict />
               </Switch>
+
+              <YMInitializer
+                accounts={[37095775]}
+                version="2"
+                options={{
+                  clickmap: true,
+                  trackLinks: true,
+                  accurateTrackBounce: true,
+                  webvisor: true,
+                  trackHash: true,
+                }}
+              />
             </React.Fragment>
           </Router>
         </RoutesContext.Provider>
