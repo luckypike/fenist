@@ -1,6 +1,6 @@
 = react_component "#{@fest.slug}/App", { \
   locale: I18n.locale,
-  title: t(:title),
+  title: @fest.title_full,
   fest: @fest,
   routes: { \
     speakers_path: speakers_path(fest_slug: @current_fest.slug),

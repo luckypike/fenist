@@ -48,6 +48,12 @@ class Speakers extends React.Component {
           <h1>
             Спикеры
           </h1>
+
+          <Helmet>
+            <title>
+              Спикеры
+            </title>
+          </Helmet>
         </div>
 
         {speakers &&

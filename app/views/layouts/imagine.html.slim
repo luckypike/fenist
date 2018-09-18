@@ -1,7 +1,8 @@
 doctype html
 html
   head
-    title 2018
+    title
+      = @current_fest.title_full
 
     = tag('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' })
     = favicon_link_tag '/favicon.ico'

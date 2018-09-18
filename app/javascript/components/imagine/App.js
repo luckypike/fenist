@@ -23,8 +23,8 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Helmet
-          defaultTitle={`${this.props.title} 2018: ${this.props.fest.title}`}
-          titleTemplate={'%s — ' + `${this.props.title} 2018: ${this.props.fest.title}`}
+          defaultTitle={this.props.title}
+          titleTemplate={`%s — ${this.props.title}`}
         />
         <RoutesContext.Provider value={routes}>
           <Router>
