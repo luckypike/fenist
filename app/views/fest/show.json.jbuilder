@@ -1,1 +1,1 @@
-json.sections @fest.sections.includes(events: [:speakers]), partial: 'sections/section', as: :section
+json.sections @fest.sections.includes(events: [:speakers, :place]), partial: 'sections/section', as: :section
