@@ -40,6 +40,11 @@ class Header extends React.Component {
                   Спикеры
                 </NavLink>
               </li>
+              <li>
+                <NavLink to={this.props.routes.partners_path}>
+                  Партнеры
+                </NavLink>
+              </li>
             </ul>
           </div>
 

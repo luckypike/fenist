@@ -1,0 +1,28 @@
+@import './Vars.css';
+
+.root {
+  padding: 1.5rem;
+  max-width: 50rem;
+  margin: 0 auto;
+
+  @media (--s) {
+    padding: 4.5rem;
+  }
+}
+
+.partner {
+  margin-bottom: 2em;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+
+  @media (--s) {
+    font-size: 24px;
+  }
+}
+
+.desc {
+  margin-top: 0.5em;
+}

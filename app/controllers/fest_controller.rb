@@ -32,7 +32,13 @@ class FestController < ApplicationController
   end
 
   def partners
-    @partners = Partner.order(title: :asc)
+    @partners = @fest.partners.order(title: :asc)
+    if @fest.is_react?
+      respond_to do |format|
+        format.html { render :app }
+        format.json
+      end
+    end    
   end
 
   private

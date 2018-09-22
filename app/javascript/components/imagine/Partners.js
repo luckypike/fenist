@@ -8,11 +8,11 @@ import { Helmet } from 'react-helmet';
 
 import { withRoutes } from '../Context/RoutesContext';
 
-import styles from './Speakers.module.css';
+import styles from './Partners.module.css';
 
-class Speakers extends React.Component {
+class Partners extends React.Component {
   state = {
-    speakers: null
+    partners: null
   }
 
   componentDidMount() {
@@ -28,41 +28,43 @@ class Speakers extends React.Component {
   _loadAsyncData() {
     this._asyncRequest = axios.CancelToken.source();
 
-    axios.get(`${this.props.routes.speakers_path}.json`, { cancelToken: this._asyncRequest.token })
+    axios.get(`${this.props.routes.partners_path}.json`, { cancelToken: this._asyncRequest.token })
       .then(res => {
         this.setState({
-          speakers: res.data.speakers
+          partners: res.data.partners
         });
       });
   }
 
   render () {
-    const { speakers } = this.state;
+    const { partners } = this.state;
 
     return (
       <div className={styles.root}>
         <div className={styles.header}>
           <h1>
-            Спикеры
+            Партнеры
           </h1>
 
           <Helmet>
             <title>
-              Спикеры
+              Партнеры
             </title>
           </Helmet>
         </div>
 
-        {speakers &&
-          <div className={styles.speakers}>
-            {speakers.map(speaker =>
-              <div className={styles.speaker} key={speaker.id}>
+        {partners &&
+          <div className={styles.partners}>
+            {partners.map(partner =>
+              <div className={styles.partner} key={partner.id}>
                 <div className={styles.title}>
-                  {speaker.title}
+                  {partner.title}
                 </div>
 
-                <div className={styles.desc}>
-                  {speaker.desc}
+                <div className={styles.url}>
+                  <a href={partner.url}>
+                    {partner.url}
+                  </a>
                 </div>
               </div>
             )}
@@ -73,4 +75,4 @@ class Speakers extends React.Component {
   }
 }
 
-export default withRoutes(Speakers);
+export default withRoutes(Partners);

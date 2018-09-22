@@ -36,6 +36,6 @@ class Admin::PartnersController < AdminController
   end
 
   def partner_params
-    params.require(:partner).permit(:title, :logo, :url)
+    params.require(:partner).permit(:title, :logo, :url, fest_ids: [])
   end
 end

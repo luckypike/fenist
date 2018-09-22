@@ -4,6 +4,7 @@
 
     .form_inputs
       = f.input :title
+      = f.association :fests, as: :check_boxes
 
       = image_tag @partner.logo.thumb.url, style: 'width: 150px;' if @partner.logo?
 

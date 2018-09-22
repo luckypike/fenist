@@ -112,6 +112,7 @@
   background-color: #fff;
   font-size: 18px;
   line-height: 20px;
+  align-self: flex-start;
 
 
   a {
@@ -169,11 +170,12 @@
 .years {
   position: absolute;
   left: 1rem;
-  top: 100%;
+  /* top: 100%; */
+  bottom: 1rem;
   display: flex;
 
   @media (--s) {
-    top: 2rem;
+    bottom: 2rem;
     left: 14rem;
   }
 }
