@@ -181,7 +181,7 @@ class Section extends React.Component {
         }
 
         {eventsCount > 2 &&
-          <div className={styles.more} onClick={this.handleToggleClick}>
+          <div className={classNames(styles.more, { [styles.open]: this.state.open })} onClick={this.handleToggleClick}>
             {this.state.open ? 'Свернуть' : 'Полное расписание'}
           </div>
         }
