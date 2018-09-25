@@ -125,7 +125,7 @@ class Section extends React.Component {
 
         <div className={styles.days}>
           {this.days.map((day, _) =>
-            <div className={classNames(styles.day, { [styles.active]: day.isSame(active) })} key={_} onClick={() => this.handleDayClick(day)}>
+            <div className={classNames(styles.day, { [styles.active]: day.isSame(active, 'day') })} key={_} onClick={() => this.handleDayClick(day)}>
               <span className={styles.short}>
                 {day.format('DD.MM')}
               </span>
