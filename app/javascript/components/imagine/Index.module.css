@@ -159,17 +159,48 @@
 }
 
 .time {
+  align-self: flex-start;
   font-size: 14px;
   color: #000;
   margin: 0.5em 0 1em;
 
-  span {
-    background-color: #e1e1e1;
+  @media (--s) {
+    font-size: 16px;
+  }
+}
+
+.range {
+  display: inline-block;
+  background-color: #e1e1e1;
+  padding: 0.25em 0.5em;
+}
+
+.book {
+  margin-top: 0.5em;
+  padding: 0.25em 0.5em;
+  color: red;
+  text-transform: uppercase;
+
+  a {
+    margin-left: 1em;
+    display: inline-block;
+    box-shadow: inset 0 0 0 2px red;
     padding: 0.25em 0.5em;
+    color: red;
+
+    &:hover {
+      background: red;
+      color: white;
+    }
   }
 
   @media (--s) {
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 22px;
+
+    a {
+      margin-left: 0;
+    }
   }
 }
 

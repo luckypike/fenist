@@ -140,11 +140,20 @@ class Section extends React.Component {
             {events.map(event =>
               <div className={styles.event} key={event.id}>
                 <div className={styles.time}>
-                  <span>
+                  <div className={styles.range}>
                     {moment.utc(event.started_at).format('HH:mm')}
                      — 
                     {moment.utc(event.ended_at).format('HH:mm')}
-                  </span>
+                  </div>
+
+                  {event.book &&
+                    <div className={styles.book}>
+                      По записи
+                      {event.book_as_link &&
+                        <a href={event.book} target="_blank">Записаться</a>
+                      }
+                    </div>
+                  }
                 </div>
                 <div className={styles.content}>
                   {event.place &&
