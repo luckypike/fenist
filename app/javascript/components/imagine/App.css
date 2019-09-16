@@ -1,39 +1,46 @@
-@import './Vars.css';
-
-body {
+html.imagine {
   background-color: #fefefe;
-
-}
-
-html {
   font-family: 'Scada', sans-serif;
   font-size: 16px;
 
   @media (--s) {
     font-size: 18px;
   }
+
+  & * {
+    box-sizing: border-box;
+  }
+
+  & a {
+    text-decoration: none;
+  }
+
+  & h1, & h2, & h3, & p {
+    font-weight: 400;
+    margin: 0 0 1rem;
+  }
+
+  & h1 {
+    font-size: 3rem;
+    line-height: 1.1em;
+  }
+
+  & h2 {
+    font-size: 2rem;
+    line-height: 1.1em;
+  }
 }
 
-* {
-  box-sizing: border-box;
+/* @import './Vars.css';
+
+body {
+
 }
 
-a {
-  color: var(--hl_color);
-  text-decoration: none;
-}
 
-h1, h2, h3, p {
-  font-weight: 400;
-  margin: 0 0 1rem;
-}
 
-h1 {
-  font-size: 3rem;
-  line-height: 1.1em;
-}
 
-h2 {
-  font-size: 2rem;
-  line-height: 1.1em;
-}
+
+
+
+ */
