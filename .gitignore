@@ -24,6 +24,7 @@
 
 /public/uploads
 
+/config/secrets.yml
 /config/database.yml
 /config/secrets.yml/public/packs
 /public/packs
