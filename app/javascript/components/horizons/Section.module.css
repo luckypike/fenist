@@ -114,7 +114,8 @@
   margin: 1rem;
   font-size: 14px;
   background: #fff;
-  border-radius: 34px;
+  border-radius: 16px;
+  overflow: hidden;
 
   @media (--s) {
     font-size: 16px;
@@ -122,35 +123,21 @@
 }
 
 .day {
-  /* border-radius: 3px; */
   cursor: pointer;
   min-width: 3rem;
-  padding: 12px;
-  margin-right: 0.25rem;
-  /* margin: calc(-1 * 0.25em) 0; */
+  padding: 12px 16px;
   transition-property: color, background;
   transition-duration: 0.25s;
   color: #A240FC;
-  border-radius: 34px;
-  /* box-shadow: inset 0 0 0 2px #000; */
-
-  &:last-child {
-    margin: 0
-  }
-
-  @media (--s) {
-    margin-right: 1em;
-  }
 
   &:hover {
-    color: #fff;
-    /* background-color: #000; */
+    color: #F25CA2;
   }
-}
 
-.active {
-  color: #fff;
-  background-color: #F25CA2;;
+  &.active {
+    color: #fff;
+    background-color: #F25CA2;
+  }
 }
 
 .long {
@@ -174,10 +161,10 @@
 }
 
 .event {
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 
   &:nth-child(even) {
-    background: rgba(242, 92, 162, 0.2);
+    background: rgba(242, 92, 162, 0.1);
   }
 
   &:not(:last-child) {
@@ -212,11 +199,9 @@
 
 .range {
   display: inline-block;
-  padding-left: 16px;
-  /* background-color: #e1e1e1; */
   color: #F25CA2;
   font-weight: normal;
-  /* padding: 0.25em 0.5em; */
+  padding: 0.25em 0;
 }
 
 .book {
@@ -262,9 +247,9 @@
   margin-bottom: 0.5em;
   font-size: 14px;
   color: #A240FC;
-  background: url('../../images/imagine/place.svg') -0.25rem -0.2em no-repeat;
+  /* background: url('../../images/imagine/place.svg') -0.25rem -0.2em no-repeat; */
   background-size: auto 1.6em;
-  padding-left: 1.5em;
+  /* padding-left: 1.5em; */
 
   @media (--s) {
     font-size: 16px;
@@ -272,7 +257,6 @@
 }
 
 .title {
-  padding-left: 16px;
   font-size: 24px;
   line-height: 32px;
   font-weight: normal;

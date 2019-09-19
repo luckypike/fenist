@@ -13,9 +13,13 @@ export default function Index (props) {
 
   useEffect(() => {
   const _onScroll = e => {
-    if (window.scrollY > (window.innerWidth / 1.7 - 64)) {
+    if (window.innerWidth > window.innerHeight && window.scrollY > (window.innerWidth / 6 - 64)) {
       setScrolling(true)
-    } else if (window.scrollY < (window.innerWidth / 1.7 - 64)) {
+    } else if (window.innerWidth > window.innerHeight && window.scrollY < (window.innerWidth / 6 - 64)) {
+      setScrolling(false)
+    } else if (window.innerWidth < window.innerHeight && window.scrollY > (window.innerWidth / 1.7 - 64)) {
+      setScrolling(true)
+    } else if (window.innerWidth < window.innerHeight && window.scrollY < (window.innerWidth / 1.7 - 64)) {
       setScrolling(false)
     }
   }
