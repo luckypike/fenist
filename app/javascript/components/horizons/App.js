@@ -21,7 +21,7 @@ export default function App ({ title, fest, routes }) {
           <Header title={fest.title} routes={routes} />
 
           <Switch>
-            <Route path={routes.fest_path} render={() => <Index routes={routes} fest={fest} />} exact strict />
+            <Route path={routes.fest_path} render={() => <Index routes={routes} />} exact strict />
             {/* <Route path={routes.speakers_path} component={Speakers} exact strict />
             <Route path={routes.partners_path} component={Partners} exact strict /> */}
           </Switch>

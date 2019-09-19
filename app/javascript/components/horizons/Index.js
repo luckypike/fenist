@@ -52,7 +52,7 @@ export default function Index (props) {
       <section className={styles.screen}>
         <div className={styles.preview}>
           <div className={styles.date}>
-            <span>23-29 сентября</span>
+            <span>23 - 29 сентября</span>
           </div>
 
           <div className={styles.title}>

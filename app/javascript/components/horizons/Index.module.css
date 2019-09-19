@@ -218,7 +218,8 @@
 
 .group {
   grid-column: 1;
-  margin-top: 100px;
+  margin-top: 10rem;
+
   @media(--l) {
     grid-column: 3 / 5;
   }
