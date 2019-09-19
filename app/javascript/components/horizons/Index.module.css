@@ -6,6 +6,7 @@
   max-width: 100%;
 
   @media(--l) {
+    margin-top: 0;
     padding: 0 calc(var(--xr) * 3);
   }
 }
@@ -16,7 +17,7 @@
   @media(--l) {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-column-gap: calc(var(--xr) * 3);
+    grid-column-gap: 4.75rem;
   }
 
   & .date {
@@ -53,7 +54,7 @@
   }
 
   @media(--l) {
-  bottom: 33%;
+  bottom: 28%;
   right: 230px;
 
     & .subscribe {
@@ -85,9 +86,8 @@
   display: none;
 
   @media(--l) {
-    bottom: 35%;
+    bottom: 30%;
     display: block;
-    /* height: 43px; */
     cursor: pointer;
     color: #F25CA2;
     left: 50%;

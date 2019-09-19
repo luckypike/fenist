@@ -7,7 +7,7 @@
   padding: 1rem 1rem 2rem 1rem ;
 
   @media(--l) {
-    padding: 97px 230px;
+    padding: 96px 60px;
   }
 }
 
@@ -28,13 +28,20 @@
 }
 
 .header {
-  display: flex;
-  margin: 0 auto;
-  font-size: 14px;
   position: relative;
+  font-size: 14px;
+  display: flex;
+
+  @media(--l) {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-column-gap: 4.75rem;
+    margin: 0 auto;
+  }
 }
 
 .logo {
+  grid-column: 2;
   color: #fff;
   font-size: 18px;
   line-height: 20px;
@@ -50,7 +57,6 @@
     display: block;
     width: 131px;
     height: 48px;
-    margin-right: 0.5em;
   }
 }
 
@@ -62,8 +68,6 @@
   @media(--l) {
     position: static;
     display: flex;
-    padding: calc(var(--yr) * 3.5);
-    margin-left: calc(var(--xr) * 3.25);
   }
 
   & .year {
@@ -90,13 +94,13 @@
   margin-left: auto;
 
   @media(--l) {
+    grid-column: 6 / 8;
     display: flex;
-    padding: calc(var(--yr) * 3.5);
-    margin-left: auto;
+    /* padding: calc(var(--yr) * 3.5); */
+    margin-left: 0;
   }
 
   & .nav {
-    margin-bottom: 4px;
     display: block;
     color: #A240FC;
     margin-bottom: .5rem;
