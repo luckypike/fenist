@@ -1,0 +1,296 @@
+@import './Vars.css';
+
+.root {
+  padding: 1.5rem;
+  max-width: 50rem;
+  margin: 0 auto;
+
+  @media (--s) {
+    padding: 4.5rem;
+  }
+}
+
+.sections {
+
+}
+
+.section {
+  margin: 0 -1rem 4rem;
+  padding-bottom: 1px;
+
+  & h2 {
+    padding: 0.4em 1rem;
+    color: #fff;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 40px;
+    margin: 0;
+  }
+
+  & .more {
+    text-align: center;
+    padding: 0.6rem 0;
+    color: #F25CA2;
+
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    font-weight: var(--fw_bold);
+
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 2px;
+      right: 2px;
+      bottom: calc(100% + 2px);
+      background: linear-gradient(color-mod(white a(0)), color-mod(white a(0.7)) 30%, white 60%);
+      height: 10rem;
+    }
+
+    @media (--s) {
+      font-size: 16px;
+    }
+  }
+
+  & .open {
+    &::before {
+      visibility: hidden;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.section_6 {
+  & h2 {
+    background-color: #5bb0cf;
+  }
+
+  box-shadow: inset 0 0 0 2px #5bb0cf;
+
+  & .more {
+    color: #fff;
+
+    background: #5bb0cf;
+    border-top: 2px solid #5bb0cf;
+  }
+}
+
+.section_7 {
+  & h2 {
+    background-color: #3cb069;
+  }
+
+  & .more {
+    background: #3cb069;
+    color: #fff;
+    border-top: 2px solid #3cb069;
+  }
+
+  box-shadow: inset 0 0 0 2px #3cb069;
+}
+
+.section_8 {
+  & h2 {
+    background-color: #f42984;
+  }
+
+  & .more {
+    background: #f42984;
+    color: #fff;
+
+    border-top: 2px solid #f42984;
+  }
+
+  box-shadow: inset 0 0 0 2px #f42984;
+}
+
+.days {
+  display: flex;
+  width: fit-content;
+  margin: 1rem;
+  font-size: 14px;
+  background: #fff;
+  border-radius: 34px;
+
+  @media (--s) {
+    font-size: 16px;
+  }
+}
+
+.day {
+  /* border-radius: 3px; */
+  cursor: pointer;
+  min-width: 3rem;
+  padding: 12px;
+  margin-right: 0.25rem;
+  /* margin: calc(-1 * 0.25em) 0; */
+  transition-property: color, background;
+  transition-duration: 0.25s;
+  color: #A240FC;
+  border-radius: 34px;
+  /* box-shadow: inset 0 0 0 2px #000; */
+
+  &:last-child {
+    margin: 0
+  }
+
+  @media (--s) {
+    margin-right: 1em;
+  }
+
+  &:hover {
+    color: #fff;
+    /* background-color: #000; */
+  }
+}
+
+.active {
+  color: #fff;
+  background-color: #F25CA2;;
+}
+
+.long {
+  display: none;
+
+  @media (--s) {
+    display: block;
+  }
+}
+
+.short {
+  display: block;
+
+  @media (--s) {
+    display: none;
+  }
+}
+
+.events {
+  margin: 0 1rem 2rem;
+}
+
+.event {
+  padding: 2rem 0;
+
+  &:nth-child(even) {
+    background: rgba(242, 92, 162, 0.2);
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #F25CA2;
+    /* margin-bottom: 2em; */
+  }
+
+  @media (--s) {
+    display: grid;
+    grid-template-columns: minmax(130px, 1fr) 1fr 1fr 1fr 1fr;
+
+    & .time {
+      /* grid-template-rows: span 2; */
+    }
+
+    & .content {
+      grid-column: 1 / span 4;
+    }
+  }
+}
+
+.time {
+  align-self: flex-start;
+  font-size: 14px;
+  color: #000;
+  margin: 0.5em 0 1em;
+
+  @media (--s) {
+    font-size: 16px;
+  }
+}
+
+.range {
+  display: inline-block;
+  padding-left: 16px;
+  /* background-color: #e1e1e1; */
+  color: #F25CA2;
+  font-weight: normal;
+  /* padding: 0.25em 0.5em; */
+}
+
+.book {
+  margin-top: 0.5em;
+  padding: 0.25em 0.5em;
+  color: red;
+  text-transform: uppercase;
+
+  & a {
+    margin-left: 1em;
+    display: inline-block;
+    box-shadow: inset 0 0 0 2px red;
+    padding: 0.25em 0.5em;
+    color: red;
+
+    &:hover {
+      background: red;
+      color: white;
+    }
+  }
+
+  @media (--s) {
+    font-size: 14px;
+    line-height: 22px;
+
+    & a {
+      margin-left: 0;
+    }
+  }
+}
+
+.speakers {
+  margin-bottom: 0.5em;
+  font-size: 14px;
+  color: #777;
+
+  @media (--s) {
+    font-size: 16px;
+  }
+}
+
+.place {
+  margin-bottom: 0.5em;
+  font-size: 14px;
+  color: #A240FC;
+  background: url('../../images/imagine/place.svg') -0.25rem -0.2em no-repeat;
+  background-size: auto 1.6em;
+  padding-left: 1.5em;
+
+  @media (--s) {
+    font-size: 16px;
+  }
+}
+
+.title {
+  padding-left: 16px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: normal;
+  margin-bottom: 0.5em;
+  color: #fff;
+
+  @media (--s) {
+    font-size: 24px;
+  }
+}
+
+.desc {
+  margin-top: 0.5em;
+  font-size: 14px;
+  line-height: 1.4em;
+
+  @media (--s) {
+    font-size: 16px;
+    line-height: 1.4em;
+  }
+}
