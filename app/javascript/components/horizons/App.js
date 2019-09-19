@@ -6,6 +6,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { YMInitializer } from 'react-yandex-metrika'
 
 import Index from './Index'
+import Speakers from './Speakers'
 import Header from './Header'
 
 export default function App ({ title, fest, routes }) {
@@ -18,12 +19,12 @@ export default function App ({ title, fest, routes }) {
 
       <Router>
         <>
-          <Header title={fest.title} routes={routes} />
+          <Header routes={routes} />
 
           <Switch>
             <Route path={routes.fest_path} render={() => <Index routes={routes} />} exact strict />
-            {/* <Route path={routes.speakers_path} component={Speakers} exact strict />
-            <Route path={routes.partners_path} component={Partners} exact strict /> */}
+            <Route path={routes.speakers_path} render={() => <Speakers routes={routes} />} exact strict />
+            {/* <Route path={routes.partners_path} render={() => <Partners routes={routes} />} exact strict /> */}
           </Switch>
 
           <YMInitializer

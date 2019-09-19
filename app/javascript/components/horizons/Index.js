@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import axios from 'axios'
 import { path } from '../Routes'
 import styles from './Index.module.css'
-import fish from '../../video/fish.mp4'
+
 import Section from './Section'
 
 export default function Index (props) {
@@ -45,13 +45,7 @@ export default function Index (props) {
 
   return (
     <div className={styles.root}>
-      <div className={classNames({[styles.placeholder]: scrolling})}></div>
-
-      <div className={styles.video}>
-        <video playsInline autoPlay loop muted>
-          <source src={fish} type="video/mp4"></source>
-        </video>
-      </div>
+      <div className={classNames(styles.placeholder, {[styles.active]: scrolling})}></div>
 
       <section className={styles.screen}>
         <div className={styles.preview}>

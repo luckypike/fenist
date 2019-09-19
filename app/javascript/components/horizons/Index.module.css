@@ -4,26 +4,9 @@
   padding: 1rem;
   margin-top: 5rem;
   max-width: 100%;
-  /* overflow-x: hidden; */
 
   @media(--l) {
     padding: 0 calc(var(--xr) * 3);
-  }
-}
-
-.video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  z-index: -2;
-
-  & video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 }
 
@@ -34,7 +17,6 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-column-gap: calc(var(--xr) * 3);
-    grid-row-gap: var(--xr);
   }
 
   & .date {
@@ -43,10 +25,6 @@
     color: #F25CA2;
     grid-column: 3;
     margin-bottom: var(--xr);
-
-    @media(--l) {
-      margin: 0;
-    }
   }
 
   & .title {
@@ -55,10 +33,6 @@
     font-size: 48px;
     line-height: 56px;
     margin-bottom: var(--xr);
-
-    @media(--l) {
-      margin: 0;
-    }
   }
 
   & .description {
@@ -66,21 +40,20 @@
     color: #fff;
     font-size: 18px;
     line-height: 28px;
+    margin-bottom: var(--xr);
   }
 }
 
 .socials {
   color: #fff;
   position: absolute;
-  height: 72px;
-  margin-top: 16px;
 
   & .subscribe {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
 
   @media(--l) {
-  bottom: 35%;
+  bottom: 33%;
   right: 230px;
 
     & .subscribe {
@@ -109,17 +82,17 @@
 .inst { background-image: url('../../images/horizons/inst.svg'); }
 
 .scroll {
-  color: #F25CA2;
-  left: 50%;
-  transform: translateX(-50%);
-  position: absolute;
-  bottom: 20%;
   display: none;
 
   @media(--l) {
-  bottom: 35%;
-  display: block;
-  cursor: pointer;
+    bottom: 35%;
+    display: block;
+    /* height: 43px; */
+    cursor: pointer;
+    color: #F25CA2;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
 }
 
   & .arrow {
@@ -197,6 +170,7 @@
   grid-column: 1;
   background-image: url('../../images/horizons/Sokolov.jpg');
   background-repeat: no-repeat;
+  background-size: cover;
   margin-bottom: 36px;
 
   &::before {
@@ -208,7 +182,8 @@
   @media(--l) {
     grid-column: 5 / span 2;
     margin-top: -60px;
-    width: 100%;
+    width: 340px;
+    background-size: auto;
 
     &::before {
       padding-top: calc(16 / 9 * 100%);
@@ -221,6 +196,7 @@
   margin-top: 10rem;
 
   @media(--l) {
+    margin-top: 0;
     grid-column: 3 / 5;
   }
 }
@@ -234,13 +210,20 @@
 }
 
 .placeholder {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  top: 0;
-  z-index: -1;
+  visibility: hidden;
   background: #191717;
-  opacity: .4;
-  transition: background .3s, opacity .3s;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: visibility 0s ease .3s, opacity .3s;
+
+  &.active {
+    visibility: visible;
+    opacity: .4;
+    transition: opacity .3s;
+  }
 }

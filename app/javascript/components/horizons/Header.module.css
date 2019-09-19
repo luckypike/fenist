@@ -11,6 +11,22 @@
   }
 }
 
+.video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: -2;
+
+  & video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 .header {
   display: flex;
   margin: 0 auto;
@@ -19,10 +35,7 @@
 }
 
 .logo {
-
-  /* padding: 0.5em; */
   color: #fff;
-  /* background-color: #fff; */
   font-size: 18px;
   line-height: 20px;
   align-self: flex-start;
@@ -73,8 +86,6 @@
 }
 
 .menu {
-  display: block;
-  color: #A240FC;
   font-size: 16px;
   margin-left: auto;
 
@@ -86,9 +97,13 @@
 
   & .nav {
     margin-bottom: 4px;
+    display: block;
+    color: #A240FC;
+    margin-bottom: .5rem;
 
     @media(--l) {
       margin-right: calc(var(--xr) * 3.5);
+      margin-bottom: 0;
       align-self: center;
 
       &:last-child {

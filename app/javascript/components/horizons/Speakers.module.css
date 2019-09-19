@@ -1,0 +1,35 @@
+.root {
+  margin-top: 5rem;
+  padding: 1rem;
+  max-width: 50rem;
+
+  @media (--s) {
+    padding: 4.5rem;
+    margin: 0 auto;
+  }
+}
+
+.speaker {
+  margin-bottom: 2em;
+}
+
+.title {
+  font-size: 18px;
+  color: #fff;
+
+  @media (--s) {
+    font-size: 24px;
+  }
+}
+
+.desc {
+  color: #fff;
+  margin-top: 0.5em;
+}
+
+h1 {
+  color: #fff;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 1em;
+}
