@@ -7,6 +7,7 @@ import { YMInitializer } from 'react-yandex-metrika'
 
 import Index from './Index'
 import Speakers from './Speakers'
+import Partners from './Partners'
 import Header from './Header'
 
 export default function App ({ title, fest, routes }) {
@@ -24,7 +25,7 @@ export default function App ({ title, fest, routes }) {
           <Switch>
             <Route path={routes.fest_path} render={() => <Index routes={routes} />} exact strict />
             <Route path={routes.speakers_path} render={() => <Speakers routes={routes} />} exact strict />
-            {/* <Route path={routes.partners_path} render={() => <Partners routes={routes} />} exact strict /> */}
+            <Route path={routes.partners_path} render={() => <Partners routes={routes} />} exact strict />
           </Switch>
 
           <YMInitializer

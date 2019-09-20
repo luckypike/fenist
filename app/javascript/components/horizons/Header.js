@@ -37,7 +37,7 @@ export default function Header ({ routes }) {
         <div className={styles.menu}>
           <Link to={routes.fest_path} className={styles.nav}>Расписание</Link>
           <Link to={routes.speakers_path} className={styles.nav}>Спикеры</Link>
-          {/* <Link to={routes.partners_path} className={styles.nav}>Партнеры</Link> */}
+          <Link to={routes.partners_path} className={styles.nav}>Партнеры</Link>
         </div>
       </header>
     </div>
