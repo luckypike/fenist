@@ -23,6 +23,8 @@ export default function Partners(props) {
 
   return (
     <div className={styles.root}>
+      <div className={styles.placeholder}></div>
+
       <div className={styles.header}>
         <h1>
           Партнеры
