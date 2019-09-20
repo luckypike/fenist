@@ -38,8 +38,17 @@ export default function Index (props) {
   }, [scrolling])
 
   function handleScrollDown () {
+    const windowCoords = document.documentElement.clientHeight
     if (document) {
-      window.scroll({ top: 1300, left: 0, behavior: 'smooth' });
+      (function scroll() {
+        if (window.pageYOffset < windowCoords) {
+          window.scrollBy(0, 10)
+          setTimeout(scroll, 0)
+        }
+        if (window.pageYOffset > windowCoords) {
+          window.scrollTo(0, windowCoords)
+        }
+      })()
     }
   }
 
@@ -93,7 +102,7 @@ export default function Index (props) {
             </div>
 
             <div className={styles.start}>
-              27 сентября, начало в 17:00, <br /> Арсенал, Кремль, стр. 6
+              27 сентября, начало в 17:00, <br /> <span>Арсенал, Кремль, стр. 6</span>
             </div>
           </div>
           <div className={styles.photo}></div>

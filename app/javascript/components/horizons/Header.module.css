@@ -2,11 +2,11 @@
 
 .root {
   width: 100%;
-  overflow: hidden;
   position: relative;
   padding: 1rem 1rem 2rem 1rem ;
 
   @media(--l) {
+    position: absolute;
     padding: 96px 60px;
   }
 }
@@ -18,7 +18,7 @@
   right: 0;
   bottom: 0;
   overflow: hidden;
-  z-index: -2;
+  z-index: -100;
 
   & video {
     width: 100%;
@@ -31,6 +31,7 @@
   position: relative;
   font-size: 14px;
   display: flex;
+  z-index: 2;
 
   @media(--l) {
     display: grid;
