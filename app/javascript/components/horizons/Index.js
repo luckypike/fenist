@@ -102,7 +102,7 @@ export default function Index (props) {
             </div>
 
             <div className={styles.start}>
-              27 сентября, начало в 17:00, <br /> <span>Арсенал, Кремль, стр. 6</span>
+              27 сентября, начало в 19:00, <br /> <span>Арсенал, Кремль, стр. 6</span>
             </div>
           </div>
           <div className={styles.photo}></div>
