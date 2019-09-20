@@ -121,11 +121,11 @@ class Section extends React.Component {
                     </div>
                   }
 
-                  {/* {event.desc &&
+                  {event.desc &&
                     <div className={styles.desc}>
                       {event.desc}
                     </div>
-                  } */}
+                  }
                 </div>
               </div>
             )}

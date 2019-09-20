@@ -240,7 +240,7 @@
 }
 
 .place {
-  margin-bottom: 0.5em;
+  margin-bottom: 16px;
   font-size: 14px;
   color: #A240FC;
   /* background: url('../../images/imagine/place.svg') -0.25rem -0.2em no-repeat; */
@@ -265,7 +265,7 @@
 }
 
 .desc {
-  margin-top: 0.5em;
+  color: #fff;
   font-size: 14px;
   line-height: 1.4em;
 
