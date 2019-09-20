@@ -107,13 +107,13 @@ class Section extends React.Component {
                   }
                 </div>
                 <div className={styles.content}>
+                  <div className={styles.speakers}>
+                    {event.speakers.map(speaker => speaker.title).join(', ')}
+                  </div>
+
                   <div className={styles.title}>
                     {event.title}
                   </div>
-
-                  {/* <div className={styles.speakers}>
-                    {event.speakers.map(speaker => speaker.title).join(', ')}
-                  </div> */}
 
                   {event.place &&
                     <div className={styles.place}>

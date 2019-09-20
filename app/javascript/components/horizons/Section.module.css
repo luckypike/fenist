@@ -167,7 +167,7 @@
     background: rgba(242, 92, 162, 0.1);
     border-bottom: 1px solid #F25CA2;
   }
-  
+
   @media (--s) {
     display: grid;
     grid-template-columns: minmax(130px, 1fr) 1fr 1fr 1fr 1fr;
@@ -232,7 +232,7 @@
 .speakers {
   margin-bottom: 0.5em;
   font-size: 14px;
-  color: #777;
+  color: #fff;
 
   @media (--s) {
     font-size: 16px;

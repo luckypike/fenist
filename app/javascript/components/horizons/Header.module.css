@@ -47,6 +47,11 @@
   line-height: 20px;
   align-self: flex-start;
 
+  & div {
+    grid-column: 2;
+    color: #fff;
+    margin: auto 0;
+  }
 
   & a {
     color: #000;
@@ -55,8 +60,8 @@
 
   & svg {
     display: block;
-    width: 131px;
     height: 48px;
+    margin-right: 8px;
   }
 }
 
@@ -96,7 +101,6 @@
   @media(--l) {
     grid-column: 6 / 8;
     display: flex;
-    /* padding: calc(var(--yr) * 3.5); */
     margin-left: 0;
   }
 

@@ -7,7 +7,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { withRoutes } from '../Context/RoutesContext';
 
 import styles from './Header.module.css';
-import Logo from '!svg-react-loader!../../images/logo.svg';
+import Logo from '!svg-react-loader!../../images/logo2018.svg';
 
 class Header extends React.Component {
   render () {

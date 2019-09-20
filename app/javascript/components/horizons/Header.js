@@ -20,6 +20,11 @@ export default function Header ({ routes }) {
         <div className={styles.logo}>
           <Link to={routes.fest_path}>
             <Logo />
+            <div>
+              ФЕНИСТ
+              <br />
+              2019
+            </div>
           </Link>
         </div>
 
