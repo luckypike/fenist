@@ -28,6 +28,12 @@ export default function App ({ title, fest, routes }) {
             <Route path={routes.partners_path} render={() => <Partners routes={routes} />} exact strict />
           </Switch>
 
+          <div className="like">
+            <a href="https://luckypike.com">
+              Сделано в L..IKE
+            </a>
+          </div>
+
           <YMInitializer
             accounts={[37095775]}
             version="2"
