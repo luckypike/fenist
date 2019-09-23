@@ -57,18 +57,18 @@ export default function Index (props) {
       <div className={classNames(styles.placeholder, {[styles.active]: scrolling})}></div>
 
       <section className={styles.screen}>
-        <div className={styles.preview}>
-          <div className={styles.date}>
-            <span>23 - 29 сентября</span>
-          </div>
+          <div className={styles.preview}>
+            <div className={styles.date}>
+              <span>23 - 29 сентября</span>
+            </div>
 
-          <div className={styles.title}>
-            Фестиваль наук, искусств и технологий Фенист 2019
-          </div>
+            <div className={styles.title}>
+              Фестиваль наук, искусств и технологий Фенист 2019
+            </div>
 
-          <div className={styles.description}>
-            3 дня открытого лектория в «Арсенале» и неделя ежедневных лекций в университетах и школах города для школьников и студентов, учителей и преподавателей. При финансовой поддержке Российской академии наук.
-          </div>
+            <div className={styles.description}>
+              3 дня открытого лектория в «Арсенале» и неделя ежедневных лекций в университетах и школах города для школьников и студентов, учителей и преподавателей. При финансовой поддержке Российской академии наук.
+            </div>
         </div>
 
         <div className={styles.socials}>
