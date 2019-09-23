@@ -1,5 +1,6 @@
 json.extract! event, :id, :title, :desc, :started_at, :ended_at, :book
 json.speakers event.speakers, partial: 'speakers/speaker', as: :speaker
+json.partner event.partner, partial: 'partners/partner', as: :partner
 json.book_as_link event.book_as_link?
 
 if event.place

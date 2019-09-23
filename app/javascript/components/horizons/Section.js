@@ -26,8 +26,9 @@ class Section extends React.Component {
     this.ended_at = this.props.section.ended_at ? moment.utc(this.props.section.ended_at) : null;
 
     this.days = [];
-    for (let m = moment(this.started_at); m.isBefore(this.ended_at); m.add(1, 'days')) {
+    for (let m = moment(this.started_at); m.isSameOrBefore(this.ended_at); m.add(1, 'days')) {
       this.days.push(moment(m));
+      console.log(m)
     }
   }
 
@@ -58,15 +59,15 @@ class Section extends React.Component {
   render () {
     const { section } = this.props;
     const { active } = this.state;
+    console.log(this.days)
 
     if(!active) return null;
 
     let events = section.events.filter(event => moment.utc(event.started_at).isSame(active, 'day'));
     const eventsCount = events.length;
     if(!this.state.open) {
-      events = events.slice(0, 10);
+      events = events;
     }
-
 
     return (
       <div className={classNames(styles.section, styles[`section_${section.id}`])}>
@@ -99,7 +100,6 @@ class Section extends React.Component {
 
                   {event.book &&
                     <div className={styles.book}>
-                      По записи
                       {event.book_as_link &&
                         <a href={event.book} target="_blank">Записаться</a>
                       }
@@ -124,6 +124,12 @@ class Section extends React.Component {
                   {event.desc &&
                     <div className={styles.desc}>
                       {event.desc}
+                    </div>
+                  }
+
+                  {event.partner.title &&
+                    <div className={styles.partner}>
+                      {event.partner.title}
                     </div>
                   }
                 </div>

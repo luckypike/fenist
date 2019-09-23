@@ -138,6 +138,10 @@
     color: #fff;
     background-color: #F25CA2;
   }
+
+  &:nth-child(6) {
+    display: none;
+  }
 }
 
 .long {
@@ -172,10 +176,6 @@
     display: grid;
     grid-template-columns: minmax(130px, 1fr) 1fr 1fr 1fr 1fr;
 
-    & .time {
-      /* grid-template-rows: span 2; */
-    }
-
     & .content {
       grid-column: 1 / span 4;
     }
@@ -202,30 +202,14 @@
 
 .book {
   margin-top: 0.5em;
-  padding: 0.25em 0.5em;
-  color: red;
-  text-transform: uppercase;
+  border-radius: var(--yr);
+  padding: var(--yr) calc(var(--yr) * 2);
+  background-color: #C169FF;
+  width: max-content;
 
   & a {
-    margin-left: 1em;
     display: inline-block;
-    box-shadow: inset 0 0 0 2px red;
-    padding: 0.25em 0.5em;
-    color: red;
-
-    &:hover {
-      background: red;
-      color: white;
-    }
-  }
-
-  @media (--s) {
-    font-size: 14px;
-    line-height: 22px;
-
-    & a {
-      margin-left: 0;
-    }
+    color: #fff;
   }
 }
 
@@ -243,9 +227,7 @@
   margin-bottom: 16px;
   font-size: 14px;
   color: #A240FC;
-  /* background: url('../../images/imagine/place.svg') -0.25rem -0.2em no-repeat; */
   background-size: auto 1.6em;
-  /* padding-left: 1.5em; */
 
   @media (--s) {
     font-size: 16px;
@@ -268,9 +250,16 @@
   color: #fff;
   font-size: 14px;
   line-height: 1.4em;
+  margin-bottom: 16px;
 
   @media (--s) {
     font-size: 16px;
     line-height: 1.4em;
   }
+}
+
+.partner {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.4em;
 }
