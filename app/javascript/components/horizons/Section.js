@@ -28,7 +28,6 @@ class Section extends React.Component {
     this.days = [];
     for (let m = moment(this.started_at); m.isSameOrBefore(this.ended_at); m.add(1, 'days')) {
       this.days.push(moment(m));
-      console.log(m)
     }
   }
 
@@ -59,7 +58,6 @@ class Section extends React.Component {
   render () {
     const { section } = this.props;
     const { active } = this.state;
-    console.log(this.days)
 
     if(!active) return null;
 
